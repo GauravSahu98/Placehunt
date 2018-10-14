@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Placehunt</title>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		
+		<script src="js/main.js"></script>
+		<style type="text/css">
+			body {
+			  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+			  color: #34495e;
+			  -webkit-font-smoothing: antialiased;
+			  line-height: 1.6em;
+			}
+
+			p {
+			  margin: 0;
+			}
+
+			.notice {
+			  position: relative;
+			  margin: 1em;
+			  background: #F9F9F9;
+			  padding: 1em 1em 1em 2em;
+			  border-left: 4px solid #DDD;
+			  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+			}
+
+			.notice:before {
+			  position: absolute;
+			  top: 50%;
+			  margin-top: -17px;
+			  left: -17px;
+			  background-color: #DDD;
+			  color: #FFF;
+			  width: 30px;
+			  height: 30px;
+			  border-radius: 100%;
+			  text-align: center;
+			  line-height: 30px;
+			  font-weight: bold;
+			  font-family: Georgia;
+			  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+			}
+
+			.info {
+			  border-color: #0074D9;
+			}
+
+			.info:before {
+			  content: "i";
+			  background-color: #0074D9;
+			}
+
+			.success {
+			  border-color: #2ECC40;
+			}
+
+			.success:before {
+			  content: "√";
+			  background-color: #2ECC40;
+			}
+
+			.warning {
+			  border-color: #FFDC00;
+			}
+
+			.warning:before {
+			  content: "!";
+			  background-color: #FFDC00;
+			}
+
+			.error {
+			  border-color: #FF4136;
+			}
+
+			.error:before {
+			  content: "X";
+			  background-color: #FF4136;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>PlaceHunt</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>PlaceHunt</span>
+			</div>
+			<nav>
+				<ul>
+
+					<li>
+						<a href="https://github.com/SahilSahu">
+							<img src="https://images-na.ssl-images-amazon.com/images/I/710JjlwJDZL._RI_.jpg" class="avatar" alt="avatar">
+						</a>
+					</li>
+					<li>
+						<a href="index.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li>
+						<a href="upload.html">
+							<span><i class="fa fa-envelope"></i></span>
+							<span>Upload</span>
+						</a>
+					</li>
+					<li>
+						<a href="slisted.html">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>Shortlisted</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span>Profile</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="notification.html">
+							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span>Messages</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span>Logout</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div id="myNav" class="overlay">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <div class="overlay-content">
+			    <center><a href="https://www.google.co.in/"><span><i class="fa fa-spinner"></i></span>&nbsp;&nbsp;Some Info here</a></center>
+			  </div>
+			</div>
+			<div class="title">
+				Notifications
+			</div>
+			<div class="main">
+				
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+					<div class="notice info" onclick="openNav()"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+
+					<div class="notice success" onclick="openNav()"><p>This is a success notice, it provides feedback of a positive nature to the user.</p></div>
+
+					<div class="notice warning" onclick="openNav()"><p>This is a warning notice, it provides feedback of a potentially negative nature to the user.</p></div>
+
+					<div class="notice error" onclick="openNav()"><p>This is an error notice, it provides feedback of a negative nature to the user.</p></div>
+
+			</div>
+		</div>
+		<script>
+		function openNav() {
+		  document.getElementById("myNav").style.width = "100%";
+		}
+
+		function closeNav() {
+		  document.getElementById("myNav").style.width = "0%";
+		}
+		</script>
+	</body>
+</html>
