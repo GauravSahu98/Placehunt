@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__.'\includes\db.php');
+require_once(__DIR__.'/../includes/db.php');
 $username="";
 $emailid="";
 $password="";
@@ -17,14 +17,19 @@ $password="";
         $query="Select * from student where username='$username'";
         $check_query=mysqli_query($connection,$query);
         if(mysqli_num_rows($check_query)>0){
-            echo"user already exists";
-            die();
+            echo "user already exists";
+            die($connection);
         }
         $query="INSERT INTO student(name, password, email) VALUES('$username','$password','$emailid')";
         
-        $insert_user_query=mysqli_query($connection,$query);
-        echo "User registered Sucessfully";
-	/**redirect to any page*/
+        if(mysqli_query($connection, $query)) {
+            header("location: index.php");
+        }
+        else {
+            echo "Error: " . $query . "<br>" . mysqli_error($connection);
+        }
+        
+	
     }
         
 ?>
