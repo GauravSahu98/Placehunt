@@ -25,7 +25,7 @@
 			background: white;
 			border: 0 none;
 			border-radius: 3px;
-			box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4);
+			box-shadow: 0 0 15px 5px rgba(0, 0, 0);
 			padding: 20px 30px;
 			box-sizing: border-box;
 			width: 80%;
@@ -41,19 +41,37 @@
 		/*inputs*/
 		#msform input, #msform textarea {
 			padding: 15px;
-			border: 1px solid #ccc;
-			border-radius: 3px;
+			border: none;
+			border-bottom: 2px solid black;
+			border-radius: 10px;
 			margin-bottom: 10px;
 			width: 100%;
 			box-sizing: border-box;
 			font-family: montserrat;
 			color: #2C3E50;
 			font-size: 13px;
+			-webkit-transition: all 0.7s ease-in-out;
+		    transition: all 0.7s ease-in-out;
+		}
+		#msform input:focus,
+		#msform select:focus,
+		#msform textarea:focus,
+		#msform button:focus {
+		    outline: none;
+		}
+		#msform input[type=text]:focus {
+			border: 1px solid black;
+			transform: translateY(-10px);
+		    box-shadow: 3px 2px 3px black;
+		}
+		#msform textarea:focus {
+			border: 1px solid black;
+		    box-shadow: 0px 4px 2px black;
 		}
 		/*buttons*/
 		#msform .action-button {
 			width: 100px;
-			background: #27AE60;
+			background: rgb(66, 134, 244);
 			font-weight: bold;
 			color: white;
 			border: 0 none;
@@ -63,7 +81,7 @@
 			margin: 10px 5px;
 		}
 		#msform .action-button:hover, #msform .action-button:focus {
-			box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+			box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(31, 73, 142);
 		}
 		/*headings*/
 		.fs-title {
@@ -89,7 +107,7 @@
 			list-style-type: none;
 			color: white;
 			text-transform: uppercase;
-			font-size: 19px;
+			font-size: 13px;
 			width: 33.33%;
 			float: left;
 			position: relative;
@@ -126,6 +144,66 @@
 		#progressbar li.active:before,  #progressbar li.active:after{
 			background: rgba(58, 15, 188);
 			color: white;
+		}
+		/* -------------- reset.css -------------- */
+		html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+		  margin: 0;
+		  padding: 0;
+		  border: 0;
+		  outline: 0;
+		  vertical-align: baseline;
+		  background: transparent;
+		  font-size: 100%;
+		}
+		
+
+		html {
+		  overflow-y: scroll;
+		}
+		body {
+		  line-height: 1.2;
+		}
+
+		.clearfix:after {
+		  content: ".";
+		  display: block;
+		  height: 0;
+		  clear: both;
+		  visibility: hidden;
+		}
+		.clearfix {
+		  display: inline-block;
+		}
+		/*_\*/
+		* html .clearfix {
+		  height: 1%;
+		}
+		.clearfix {
+		  display: block;
+		}
+
+		html, body {
+		  height: 100%;
+		}
+
+		.js-ag-blurlayer {
+		  z-index: -1;
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		}
+
+		.ag-dark-blur {
+		  width: 100%;
+		  height: 100%;
+		  background-image: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/dark-blur/images/dark-blur.jpg);
+		  background-color: #3f4652;
+		  background-size: cover;
+
+		  z-index: -1;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
 		}
 		</style>
 	</head>
@@ -171,13 +249,13 @@
 					<li>
 						<a href="#">
 							<span><i class="fa fa-credit-card-alt"></i></span>
-							<span>Analysis</span>
+							<span>Profile</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
 							<span><i class="fa fa-credit-card-alt"></i></span>
-							<span>Notifications</span>
+							<span>Messages</span>
 						</a>
 					</li>
 					<li>
@@ -191,46 +269,185 @@
 		</div>
 		<div class="main-content">
 			<div class="title">
-				Applied Jobs
+				Upload Jobs
 			</div>
 			<div class="main">
 				<!-- multistep form -->
 				<form id="msform">
 				  <!-- progressbar -->
 				  <ul id="progressbar">
-				    <li class="active">Account Setup</li>
-				    <li>Social Profiles</li>
-				    <li>Personal Details</li>
+				    <li class="active">Job Specification</li>
+				    <li>Requirements</li>
+				    <li>Package Details</li>
 				  </ul>
 				  <!-- fieldsets -->
 				  <fieldset>
-				    <h2 class="fs-title">Create your account</h2>
-				    <h3 class="fs-subtitle">This is step 1</h3>
-				    <input type="text" name="email" placeholder="Email" />
-				    <input type="password" name="pass" placeholder="Password" />
-				    <input type="password" name="cpass" placeholder="Confirm Password" />
+				    <h2 class="fs-title">Job Details</h2>
+				    <h3 class="fs-subtitle">Add Job title and description</h3>
+				    <hr><br>
+				    <input type="text" name="title" placeholder="Title" />
+				    <textarea name="description" placeholder="Description" style="height: 120px;"></textarea>
 				    <input type="button" name="next" class="next action-button" value="Next" />
 				  </fieldset>
 				  <fieldset>
-				    <h2 class="fs-title">Social Profiles</h2>
-				    <h3 class="fs-subtitle">Your presence on the social network</h3>
-				    <input type="text" name="twitter" placeholder="Twitter" />
-				    <input type="text" name="facebook" placeholder="Facebook" />
-				    <input type="text" name="gplus" placeholder="Google Plus" />
+				    <h2 class="fs-title">SkillSet</h2>
+				    <h3 class="fs-subtitle">Your Criteria</h3>
+				    <hr><br>
+				    <input type="text" name="cgpa" placeholder="Avg_CGPA" />
+				    <textarea name="skill" placeholder="Skills Expected (example:Django,Laravel,Html,CSS etc)" style="height: 150px;"></textarea>
 				    <input type="button" name="next" class="next action-button" value="Next" />
 				  </fieldset>
 				  <fieldset>
-				    <h2 class="fs-title">Personal Details</h2>
-				    <h3 class="fs-subtitle">We will never sell it</h3>
-				    <input type="text" name="fname" placeholder="First Name" />
-				    <input type="text" name="lname" placeholder="Last Name" />
-				    <input type="text" name="phone" placeholder="Phone" />
-				    <textarea name="address" placeholder="Address"></textarea>
+				    <h2 class="fs-title">Package Offering</h2>
+				    <h3 class="fs-subtitle">Range of Offering</h3>
+				    <hr><br>
+				    <input type="text" name="mini" placeholder="Minimum" />
+				    <br><br>
+				    <input type="text" name="maxi" placeholder="Maximum" />
 				    <input type="submit" name="submit" class="submit action-button" value="Submit" />
 				  </fieldset>
 				</form>
+				<div class="ag-dark-blur"></div>
+				<script type="text/javascript">
+					(function ($) {
+					  $(function () {
+
+					    (function() {
+					      var x=new r;
+					      function r(){}
+					      r.prototype.setInterval=function(a,b){
+					        return window.setInterval(a,b)
+					      }
+
+					      r.prototype.clearInterval=function(a){
+					        window.clearInterval(a)
+					      }
+
+					      r.prototype.setTimeout=function(a,b){
+					        return window.setTimeout(a,b)
+					      }
+
+					      r.prototype.clearTimeout=function(a){
+					        window.clearTimeout(a)
+					      }
+
+					      r.prototype.requestAnimationFrame=function(a){
+					        return window.requestAnimationFrame(a)
+					      }
+
+					      r.prototype.cancelAnimationFrame=function(a){
+					        window.cancelAnimationFrame(a)
+					      }
+
+					      function y(){
+					        var a=$("body");
+					        function b(){
+					          a.mousemove(function(c){
+					            p=c.clientX;
+					            t=c.clientY;
+					            w=Date.now();
+					            u||n()
+					          });
+
+					          $(window).on("blur mouseout",function(){
+					            t=p=null
+					          })
+					            .on("resize",function(){
+					              d&&d.parentNode&&d.parentNode.removeChild(d);
+					              q()
+					            });
+					          q()
+					        }
+
+					        function q(){
+					          var c,b;
+					          h();
+					          c=a.width();
+					          b=a.height();
+					          d=document.createElement("canvas");
+					          d.className="js-ag-blurlayer";
+					          d.width=c;
+					          d.height=b;
+					          a.append(d);
+					          l=document.createElement("canvas");
+					          l.width=c;
+					          l.height=b;
+					          if(d.getContext&&d.getContext("2d")&&(m=d.getContext("2d"),
+					              f=l.getContext("2d"),
+					              f.lineCap="round",
+					              f.shadowColor="#000000",
+					              f.shadowBlur=-1<navigator.userAgent.indexOf("Firefox")?0:30,!g)){
+					            g=new Image();
+					            if(!a.css("background-image")) throw Error("element must have a background image");
+					            $(g).one("load",n);
+					            // imagem clara
+					            $(g).attr("src","https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/dark-blur/images/default-bg.jpg");
+					          }
+					        }
+
+					        function h(){
+					          v=[];
+					          $(".js-blurEffect--skip").each(function(c,a){
+					            var d;
+					            d=$(a);
+					            d.is(":visible")&&(c=d.position(),
+					                a=d.outerWidth(),
+					                d=d.outerHeight(),
+					                v.push({
+					                  top:c.top,
+					                  left:c.left,
+					                  width:a,
+					                  height:d
+					                })
+					            )}
+					          )}
+
+					        function n(){
+					          var c, b=Date.now();
+					          c=a.scrollTop();
+					          u=b>w+500?!1:!0;
+					          p&&u&&e.unshift({
+					            time:b,x:p,y:t+c
+					          });
+					          for(c=0;c<e.length;)
+					            1E3<b-e[c].time?e.length=c:c++;
+					          0<e.length&&x.requestAnimationFrame(n);
+					          f.clearRect(0,0,l.width,l.height);
+					          for(c=1;c<e.length;c++){
+					            var h=Math.sqrt(Math.pow(e[c].x-e[c-1].x,2)+Math.pow(e[c].y-e[c-1].y,2));
+					            f.strokeStyle="rgba(0,0,0,"+Math.max(1-(b-e[c].time)/1E3,0)+")";
+					            f.lineWidth=25+75*Math.max(1-h/50,0);
+					            f.beginPath();
+					            f.moveTo(e[c-1].x,e[c-1].y);
+					            f.lineTo(e[c].x,e[c].y);
+					            f.stroke()
+					          }
+					          b=d.width;
+					          c=d.width/g.naturalWidth*g.naturalHeight;
+					          c<d.height&&(c=d.height,b=d.height/g.naturalHeight*g.naturalWidth);
+					          m.drawImage(g,0,0,b,c);
+					          m.globalCompositeOperation="destination-in";
+					          m.drawImage(l,0,0);
+					          m.globalCompositeOperation="source-over";
+					          v.forEach(function(c){
+					            m.clearRect(c.left,c.top,c.width,c.height)
+					          })
+					        }
+					        var d,l,m,f,g,p=null,t=null,e=[],w=0,u=!0,v=[];
+					        "createTouch" in document||$(b)
+					      }
+
+					      $(function(){
+					        y()
+					      });
+					    })();
+
+					  });
+					})(jQuery);
+				</script>
 			</div>
 		</div>
+
 		<script type="text/javascript">
 			
 			//jQuery time
