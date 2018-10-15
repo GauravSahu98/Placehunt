@@ -26,8 +26,8 @@
               <li class="nav-item"><a href="about.html" class="nav-link">How we work</a></li>
               <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
               <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-              <li class="nav-item"><a href="#studentsignup" class="nav-link">Student Login/Signup</a></li>
-              <li class="nav-item"><a href="#companysignup" class="nav-link">Company Login/Signup</a></li>
+              <li class="nav-item"><a href="#studentsignup" class="nav-link">Student</a></li>
+              <li class="nav-item"><a href="#companysignup" class="nav-link">Company</a></li>
             </ul>
           </div>
         </div>
@@ -35,27 +35,101 @@
       <!-- END nav -->
 
       <div class="popup" id="studentsignup">
-          <div class="popup-inner">
-            <div class="popup__photo">
-              <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80" alt="">
-            </div>
-            <div class="popup__text">
-              <h1>Lorem ipsum dolor sit amet</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex velit, viverra non vulputate vitae, blandit vitae nisl. Nullam fermentum orci et erat viverra bibendum. Aliquam sed varius nibh, vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.</p>
+            <div class="container">
+              <div class="frame">
+                <div class="nav">
+                  <ul class"links">
+                    <li class="signin-active"><a class="btn">Sign in</a></li>
+                    <li class="signup-inactive"><a class="btn">Sign up </a></li>
+                  </ul>
+                </div>
+                <div>
+                  <form class="form-signin" action="" method="post" name="form">
+                      <label for="username">Username</label>
+                      <input class="form-styling" type="text" name="username" placeholder=""/>
+                      <label for="password">Password</label>
+                      <input class="form-styling" type="text" name="password" placeholder=""/>
+                      <div class="btn-animate">
+                        <a class="btn-signin">Sign in</a>
+                      </div>
+                    </form>
+                    
+                    <form class="form-signup" action="student/register.php" method="POST" name="form">
+                      <label for="fullname">Username</label>
+                      <input class="form-styling" type="text" name="username" placeholder=""/>
+                      <label for="email">Email</label>
+                      <input class="form-styling" type="text" name="email" placeholder=""/>
+                      <label for="password">Password</label>
+                      <input class="form-styling" type="password" name="password" placeholder=""/>
+                      <label for="confirmpassword">Confirm password</label>
+                      <input class="form-styling" type="password" name="confirmpassword" placeholder=""/>
+                      <input class="btn-signup" style="color: white;" type="submit" name="signup"/>Sign Up
+                    </form>
+                  
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="forgot">
+                    <a href="#">Forgot your password?</a>
+                  </div>
+                  
+              </div>
+                
             </div>
             <a class="popup__close" href="#">X</a>
           </div>
         </div>
 
         <div class="popup" id="companysignup">
-            <div class="popup-inner">
-              <div class="popup__photo">
-                <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80" alt="">
+          <div class="container">
+            <div class="frame">
+              <div class="nav">
+                <ul class"links">
+                  <li class="signin-active"><a class="btn">Sign in</a></li>
+                  <li class="signup-inactive"><a class="btn">Sign up </a></li>
+                </ul>
               </div>
-              <div class="popup__text">
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex velit, viverra non vulputate vitae, blandit vitae nisl. Nullam fermentum orci et erat viverra bibendum. Aliquam sed varius nibh, vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.</p>
-              </div>
+              <div>
+                <form class="form-signin" action="" method="post" name="form">
+                    <label for="username">Username</label>
+                    <input class="form-styling" type="text" name="username" placeholder=""/>
+                    <label for="password">Password</label>
+                    <input class="form-styling" type="text" name="password" placeholder=""/>
+                    <div class="btn-animate">
+                      <a class="btn-signin" type="submit" name="signin">Sign in</a>
+                    </div>
+                  </form>
+                  
+                  <form class="form-signup" action="company/register.php" method="post" name="form">
+                    <label for="fullname">Username</label>
+                    <input class="form-styling" type="text" name="username" placeholder=""/>
+                    <label for="email">Email</label>
+                    <input class="form-styling" type="text" name="email" placeholder=""/>
+                    <label for="password">Password</label>
+                    <input class="form-styling" type="password" name="password" placeholder=""/>
+                    <label for="confirmpassword">Confirm password</label>
+                    <input class="form-styling" type="password" name="confirmpassword" placeholder=""/>
+                    <a class="btn-signup" style="color: white;" type="submit" name="signup">Sign Up</a>
+                  </form>
+                
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="forgot">
+                  <a href="#">Forgot your password?</a>
+                </div>
+                
+            </div>
+              
+          </div>
               <a class="popup__close" href="#">X</a>
             </div>
           </div>
