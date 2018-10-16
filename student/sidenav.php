@@ -79,7 +79,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="logout.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>
 								<span>Logout</span>
 							</a>
