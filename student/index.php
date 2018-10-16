@@ -1,21 +1,16 @@
-<?php include 'sidenav.php' ?>
+<?php 
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Placehunt</title>
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/main.css">
+require_once('sidenav.php');
+require_once('../includes/studentfunctions.php');
 
-		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-		
-		<script src="js/main.js"></script>
-	</head>
-	<body>
+session_start();
+if(!isset($_SESSION['name'])){
+	header('location: ../index.php');
+}	
+
+$jobs = getappliedjobs($_SESSION['name']);
+
+?>
 		
 
 		<div class="main-content">
@@ -74,17 +69,11 @@
 		  document.getElementById("myNav").style.width = "100%";
 		  
 		  var myWindow = window.open("","_self");
-    myWindow.document.write("<p>I replaced the current window.</p>");
+    	  myWindow.document.write("<p>I replaced the current window.</p>");
 		}
 		function closeNav() {
 		  document.getElementById("myNav").style.width = "0%";
 		}
-
-		
-
-
-
-
 		</script>
 	</body>
 </html>

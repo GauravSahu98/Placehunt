@@ -5,10 +5,7 @@
     define("db","placehunt");
     $connection=mysqli_connect(server, username, password, db);
     
-    if($connection){
-        //echo "We are connected!!";
-     }
-     else {
-         die("Connection failed: " . mysqli_connect_error());
+    if(!$connection){
+        die("Connection failed: " . mysqli_connect_error());
      }
 ?>

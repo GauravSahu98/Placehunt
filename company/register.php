@@ -26,7 +26,7 @@ $password="";
             header("location: index.php");
         }
         else {
-            echo "Error: " . $query . "<br>" . mysqli_error($connection);
+            echo "Error: Could not register";
         }
         
 	
