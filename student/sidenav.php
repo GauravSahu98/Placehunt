@@ -20,6 +20,13 @@
 					<i class="fa fa-tachometer"></i>
 					<span>PlaceHunt</span>
 				</div>
+				<div class="user-field">
+				  <a href="#" class="notifications"><i class="fa fa-bell-o" aria-hidden="true"><span class="circle">5+</span></i></a>
+				  <a href="#">
+				    <div class="user-img"></div>
+				    <i class="fa fa-caret-down" aria-hidden="true"></i>
+				  </a>
+				</div>
 				<a href="#" class="nav-trigger"><span></span></a>
 			</div>
 			<div class="side-nav">
