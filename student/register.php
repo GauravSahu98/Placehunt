@@ -6,10 +6,10 @@ $emailid="";
 $password="";
 
 
-    if(isset($_POST['signup'])){
+    if(isset($_POST['ssignup'])){
         $username=$_POST['username'];
         $emailid=$_POST['email'];
-        $password=$_POST['password'];
+        $password=password_hash($_POST['password'], PASSWORD_DEFAULT);
         
         $username=mysqli_real_escape_string($connection,$username);
         $emailid=mysqli_real_escape_string($connection,$emailid);
@@ -17,7 +17,7 @@ $password="";
         $query="Select * from student where username='$username'";
         $check_query=mysqli_query($connection,$query);
         if(mysqli_num_rows($check_query)>0){
-            echo "user already exists";
+            echo "User already exists";
             die($connection);
         }
         $query="INSERT INTO student(name, password, email) VALUES('$username','$password','$emailid')";
