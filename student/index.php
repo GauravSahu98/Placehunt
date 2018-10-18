@@ -8,7 +8,8 @@ if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
 }	
 
-$jobs = getappliedjobs($_SESSION['name']);
+$numjobs = getnumappliedjobs($_SESSION['name']);
+$
 
 ?>
 		
@@ -21,7 +22,7 @@ $jobs = getappliedjobs($_SESSION['name']);
 			  </div>
 			</div>
 			<div class="title">
-				Dashboard
+				<?php echo $numjobs; ?>
 			</div>
 			<div class="main">
 				<div class="widget" onclick="openNav()" style="background-image: url(https://images-na.ssl-images-amazon.com/images/I/710JjlwJDZL._RI_.jpg);background-size: cover;">
@@ -63,6 +64,7 @@ $jobs = getappliedjobs($_SESSION['name']);
 				</div>
 			</div>
 		</div>
+
 		<script>
 		function openNav() {
 

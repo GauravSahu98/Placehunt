@@ -11,4 +11,14 @@ function getappliedjobs($name){
     }
 }
 
+function getnumappliedjobs($name){
+    global $connection;
+    $query = "SELECT * FROM JOB WHERE JID IN (SELECT JID FROM APPLIES WHERE SID=(SELECT SID FROM STUDENT WHERE NAME= '$name'))";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_num_rows(mysqli_query($connection, $query));
+        return($row);
+    }
+}
+
+
 ?>
