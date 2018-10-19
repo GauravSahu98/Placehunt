@@ -13,7 +13,7 @@
                       <input class="form-styling" type="text" name="username" placeholder="" required/>
                       <label for="password">Password</label>
                       <input class="form-styling" type="password" name="password" placeholder="" required/>
-                      <input class="btn-signin btn-animate" type="submit" name="signin" value="Sign In"/>
+                      <input class="btn-signin btn-animate" type="submit" name="ssignin" value="Sign In"/>
                     </form>
                     
                     <form class="form-signup" action="student/register.php" method="POST" name="form">
@@ -25,7 +25,7 @@
                       <input class="form-styling" type="password" name="password" placeholder="" required/>
                       <label for="confirmpassword">Confirm password</label>
                       <input class="form-styling" type="password" name="confirmpassword" placeholder="" required/>
-                      <input class="btn-signup btn-animate" type="submit" name="signup" value="Sign Up"/>
+                      <input class="btn-signup btn-animate" type="submit" name="ssignup" value="Sign Up"/>
                     </form>
                   
                   </div>
@@ -51,7 +51,7 @@
                     <input class="form-styling" type="text" name="username" placeholder="" required/>
                     <label for="password">Password</label>
                     <input class="form-styling" type="password" name="password" placeholder="" required/>
-                    <input class="btn-signin btn-animate" type="submit" value="Sign In"/>
+                    <input class="btn-signin btn-animate" type="submit" name="csignin" value="Sign In"/>
                   </form>
                   
                   <form class="form-signup" action="company/register.php" method="post" name="form">
@@ -63,7 +63,7 @@
                     <input class="form-styling" type="password" name="password" placeholder="" required/>
                     <label for="confirmpassword">Confirm password</label>
                     <input class="form-styling" type="password" name="confirmpassword" placeholder="" required/>
-                    <input class="btn-signup btn-animate" type="submit" value="Sign Up"/>
+                    <input class="btn-signup btn-animate" type="submit" name="csignup" value="Sign Up"/>
                   </form>
                 
                 </div>

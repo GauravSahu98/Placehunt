@@ -11,29 +11,30 @@ if(!isset($_SESSION['name'])){
 $numjobs = getnumappliedjobs($_SESSION['name']);
 
 
+$numcompany = getnumcompanies();
+
+
 ?>
 		
 
 		<div class="main-content">
 			<div class="main">
-				<div class="widget" id="appl">
+				<div class="widget" onclick="location.href='applied.php'" id="appl">
 					<div class="title">Applied Jobs</div>
-					<!--p>10 Applied</p-->
+					<h5><?php print_r($numjobs." applied"); ?></h5>
 				</div>
-				<div class="widget" onclick="location.href='resume.php' " id="resume">
-					<div class="title">View/Update Resume</div>
+				<div class="widget" onclick="location.href='companies.php'" id="cmpn">
+					<div class="title">All Companies</div>
+					<h5><?php print_r($numcompany." companies"); ?></h5>
 				</div>
-				<div class="widget" id="tests">
-					<div class="title">Scheduled Tests</div>
+				<div class="widget" onclick="location.href='problems.php'" id="tests">
+					<div class="title">Practise Problems</div>
 				</div>
 				<div class="widget" id="pfmance">
-					<div class="title">Performance</div>
-				</div>
-				<div class="widget" id="cmpn">
-					<div class="title">Companies</div>
+					<div class="title">Track Performance</div>
 				</div>
 				<div class="widget" onclick="location.href='profile.php' " id="profile">
-					<div class="title">My Profile</div>
+					<div class="title">View/Edit Profile</div>
 				</div>
 			</div>
 		</div>

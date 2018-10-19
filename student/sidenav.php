@@ -50,21 +50,14 @@
 						</li>
 						<li>
 							<a href="applied.php">
-
 								<span><i class="fa fa-envelope"></i></span>
-								<span>Applied</span>
+								<span>Applied Jobs</span>
 							</a>
 						</li>
 						<li>
-							<a href="resume.php">
-								<span><i class="fa fa-bar-chart"></i></span>
-								<span>Resume</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
+							<a href="problems.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>
-								<span>Tests</span>
+								<span>Practise</span>
 							</a>
 						</li>
 						<li>
@@ -74,19 +67,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="companies.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>
-								<span>Companies</span>
+								<span>All Companies</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<span><i class="fa fa-credit-card-alt"></i></span>
-								<span>Notifications</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
+							<a href="logout.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>
 								<span>Logout</span>
 							</a>

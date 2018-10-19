@@ -8,22 +8,7 @@ if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
 }	
 
-function getappliedjobshtml($jobs){
-    $jobshtml = "";
-
-    foreach($jobs as $job){
-        $jobshtml = $jobshtml."<tr>";
-        $jobshtml = $jobshtml."<td>".$job['jid']."</td>";
-        $jobshtml = $jobshtml."<td>".$job['position']."</td>";
-        $jobshtml = $jobshtml."<td>".$job['skills']."</td>";
-        $jobshtml = $jobshtml."</tr>";
-    }
-
-    return $jobshtml;
-}
-
-$appliedjobs = getappliedjobs($_SESSION['name']);
-$appliedjobshtml = getappliedjobshtml($appliedjobs);
+$numcompany = getallcompanies();
 
 ?>
 
@@ -44,20 +29,37 @@ $appliedjobshtml = getappliedjobshtml($appliedjobs);
 		</style>
 		<div class="main-content">
 			<div class="title">
-				<?php echo $_SESSION['name']."'s" ?> Applied jobs
+				Problem Set
 			</div>
 			<div class="main">
 				<div class="widget">
-					<div class="title">Jobs</div>
+					<div class="title">Problems</div>
 					<table>
 					  <tr>
-					    <th>Id</th>
-					    <th>Position</th>
-					    <th>Skills</th>
+					    <th>First Name</th>
+					    <th>Last Name</th>
+					    <th>Points</th>
 					  </tr>
-					  <?php 
-                        echo $appliedjobshtml;
-                      ?>
+					  <tr>
+					    <td>Peter</td>
+					    <td>Griffin</td>
+					    <td>$100</td>
+					  </tr>
+					  <tr>
+					    <td>Lois</td>
+					    <td>Griffin</td>
+					    <td>$150</td>
+					  </tr>
+					  <tr>
+					    <td>Joe</td>
+					    <td>Swanson</td>
+					    <td>$300</td>
+					  </tr>
+					  <tr>
+					    <td>Cleveland</td>
+					    <td>Brown</td>
+					    <td>$250</td>
+					  </tr>
 					</table>
 					<!--div class="overlay-wid">
 					    <div class="text">Here You can view your applied jobs</div>
