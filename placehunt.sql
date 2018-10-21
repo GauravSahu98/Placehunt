@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2018 at 11:32 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Oct 21, 2018 at 09:06 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,34 +25,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `awards`
 --
 
-CREATE TABLE `admin` (
-  `name` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL
+CREATE TABLE `awards` (
+  `title` varchar(100) NOT NULL,
+  `description` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `applies`
---
-
-CREATE TABLE `applies` (
-  `sid` int(50) NOT NULL,
-  `jid` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `applies`
---
-
-INSERT INTO `applies` (`sid`, `jid`) VALUES
-(10, 1),
-(10, 3),
-(12, 2),
-(12, 3);
 
 -- --------------------------------------------------------
 
@@ -61,22 +40,53 @@ INSERT INTO `applies` (`sid`, `jid`) VALUES
 --
 
 CREATE TABLE `company` (
-  `email` varchar(20) NOT NULL,
-  `cid` int(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `contactno` int(15) DEFAULT NULL,
-  `password` varchar(255) NOT NULL
+  `id` int(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company_profile`
+--
+
+CREATE TABLE `company_profile` (
+  `proid` int(100) NOT NULL,
+  `about` varchar(100) NOT NULL,
+  `contactno` int(20) NOT NULL,
+  `contactmail` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `education`
+--
+
+CREATE TABLE `education` (
+  `education_id` int(100) NOT NULL,
+  `school_name` varchar(100) NOT NULL,
+  `school_passed_year` int(10) NOT NULL,
+  `school_location` varchar(100) NOT NULL,
+  `ssc_marks` float NOT NULL,
+  `college_name` varchar(100) NOT NULL,
+  `college_location` varchar(100) NOT NULL,
+  `college_passed_year` int(20) NOT NULL,
+  `hsc_marks` float NOT NULL,
+  `grad_name` varchar(100) NOT NULL,
+  `grad_location` varchar(100) NOT NULL,
+  `grad_passed_year` int(100) NOT NULL,
+  `grad_cgpa` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `company`
+-- Dumping data for table `education`
 --
 
-INSERT INTO `company` (`email`, `cid`, `name`, `contactno`, `password`) VALUES
-('aa@gmail.df', 2, 'IVP', 1253737470, '1234'),
-('asd@f.df', 3, 'JP Morgan', 1736247498, '234'),
-('mn@gmail.com', 4, 'Media.net', 1234567890, '$2y$10$zJPxA.rR1nWuxceP29vOPuDDArQenWENOgM5/nqdOevdoaRTM0URq'),
-('zu@uber.com', 6, 'Uber', 1264722878, '$2y$10$NPm2BTgm7UMggRyuWpHMBu8PspuZPQQfWFmisUdGBRpr5b/KojIji');
+INSERT INTO `education` (`education_id`, `school_name`, `school_passed_year`, `school_location`, `ssc_marks`, `college_name`, `college_location`, `college_passed_year`, `hsc_marks`, `grad_name`, `grad_location`, `grad_passed_year`, `grad_cgpa`) VALUES
+(1, 'KES', 2014, 'Karjat', 94, '', '', 0, 0, '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -85,29 +95,10 @@ INSERT INTO `company` (`email`, `cid`, `name`, `contactno`, `password`) VALUES
 --
 
 CREATE TABLE `job` (
-  `jid` int(50) NOT NULL,
-  `position` varchar(20) NOT NULL,
-  `skills` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `job`
---
-
-INSERT INTO `job` (`jid`, `position`, `skills`) VALUES
-(1, 'Frontend web dev', 'HTML, CSS, JS'),
-(2, 'Android dev', 'Ionic'),
-(3, 'Backend web dev', 'Django, PHP');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `posts`
---
-
-CREATE TABLE `posts` (
-  `cid` int(50) NOT NULL,
-  `jid` int(50) NOT NULL
+  `jid` int(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `salary` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -117,48 +108,80 @@ CREATE TABLE `posts` (
 --
 
 CREATE TABLE `student` (
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `sid` int(50) NOT NULL,
-  `cgpa` double DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `admittedyear` int(100) DEFAULT '2014',
-  `contact` int(15) DEFAULT NULL,
-  `password` varchar(255) NOT NULL
+  `id` int(100) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `email` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`name`, `email`, `sid`, `cgpa`, `address`, `admittedyear`, `contact`, `password`) VALUES
-('Sam', 'sam@kk.com', 10, NULL, NULL, 2014, NULL, '$2y$10$dDXiYNi6ewcMTnbi/g9FYeEG/bZJjl15GlqWvN6o/xUj34VMHxqzG'),
-('Sam123', 'sam1@kk.com', 11, NULL, NULL, 2014, NULL, '$2y$10$Z4G/UooGPBUIQWV49hvzWORkGd.v.o7spyNPEj/zg1PDUgRD.fj5i'),
-('gs98', 'gauravsahu.gs.98@gmail.com', 12, NULL, NULL, 2014, NULL, '$2y$10$EBFA3EVDger1Nx31fbhEYuKGeGhMHJdoCzSJixGAJSJjeF5WWhliS');
+INSERT INTO `student` (`id`, `username`, `password`, `email`) VALUES
+(1, 'ashelar', '12345', 'ashelar@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_profile`
+--
+
+CREATE TABLE `student_profile` (
+  `proid` int(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `qualification` varchar(100) NOT NULL,
+  `profile_preference` varchar(50) NOT NULL,
+  `candidate_about` varchar(250) NOT NULL,
+  `edu_id` int(100) NOT NULL,
+  `workexp_id` int(100) NOT NULL,
+  `achieve_id` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_profile`
+--
+
+INSERT INTO `student_profile` (`proid`, `gender`, `qualification`, `profile_preference`, `candidate_about`, `edu_id`, `workexp_id`, `achieve_id`) VALUES
+(1, 'male', 'BE', 'ML', 'Noice', 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workexperience`
+--
+
+CREATE TABLE `workexperience` (
+  `designation1` varchar(100) NOT NULL,
+  `workid` int(100) NOT NULL,
+  `timespan1` varchar(100) NOT NULL,
+  `organization1` varchar(100) NOT NULL,
+  `designation2` varchar(100) NOT NULL,
+  `timespan2` varchar(100) NOT NULL,
+  `organization2` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`name`);
-
---
--- Indexes for table `applies`
---
-ALTER TABLE `applies`
-  ADD PRIMARY KEY (`sid`,`jid`),
-  ADD KEY `Applies_fk1` (`jid`);
-
---
 -- Indexes for table `company`
 --
 ALTER TABLE `company`
-  ADD PRIMARY KEY (`cid`),
-  ADD UNIQUE KEY `cid` (`cid`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `company_profile`
+--
+ALTER TABLE `company_profile`
+  ADD PRIMARY KEY (`proid`);
+
+--
+-- Indexes for table `education`
+--
+ALTER TABLE `education`
+  ADD PRIMARY KEY (`education_id`);
 
 --
 -- Indexes for table `job`
@@ -167,19 +190,24 @@ ALTER TABLE `job`
   ADD PRIMARY KEY (`jid`);
 
 --
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`cid`,`jid`),
-  ADD KEY `Posts_fk1` (`jid`);
-
---
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`sid`),
-  ADD UNIQUE KEY `sid` (`sid`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `student_profile`
+--
+ALTER TABLE `student_profile`
+  ADD PRIMARY KEY (`proid`),
+  ADD UNIQUE KEY `edu_id` (`edu_id`),
+  ADD UNIQUE KEY `workexp_id` (`workexp_id`);
+
+--
+-- Indexes for table `workexperience`
+--
+ALTER TABLE `workexperience`
+  ADD PRIMARY KEY (`workid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -189,37 +217,77 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `cid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `company_profile`
+--
+ALTER TABLE `company_profile`
+  MODIFY `proid` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `education`
+--
+ALTER TABLE `education`
+  MODIFY `education_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `job`
 --
 ALTER TABLE `job`
-  MODIFY `jid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `jid` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `sid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `student_profile`
+--
+ALTER TABLE `student_profile`
+  MODIFY `proid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `workexperience`
+--
+ALTER TABLE `workexperience`
+  MODIFY `workid` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `applies`
+-- Constraints for table `company_profile`
 --
-ALTER TABLE `applies`
-  ADD CONSTRAINT `Applies_fk0` FOREIGN KEY (`sid`) REFERENCES `student` (`sid`),
-  ADD CONSTRAINT `Applies_fk1` FOREIGN KEY (`jid`) REFERENCES `job` (`jid`);
+ALTER TABLE `company_profile`
+  ADD CONSTRAINT `company_profile_ibfk_1` FOREIGN KEY (`proid`) REFERENCES `company` (`id`);
 
 --
--- Constraints for table `posts`
+-- Constraints for table `education`
 --
-ALTER TABLE `posts`
-  ADD CONSTRAINT `Posts_fk0` FOREIGN KEY (`cid`) REFERENCES `company` (`cid`),
-  ADD CONSTRAINT `Posts_fk1` FOREIGN KEY (`jid`) REFERENCES `job` (`jid`);
+ALTER TABLE `education`
+  ADD CONSTRAINT `education_ibfk_1` FOREIGN KEY (`education_id`) REFERENCES `student_profile` (`edu_id`);
+
+--
+-- Constraints for table `job`
+--
+ALTER TABLE `job`
+  ADD CONSTRAINT `job_ibfk_1` FOREIGN KEY (`jid`) REFERENCES `company` (`id`);
+
+--
+-- Constraints for table `student_profile`
+--
+ALTER TABLE `student_profile`
+  ADD CONSTRAINT `student_profile_ibfk_1` FOREIGN KEY (`proid`) REFERENCES `student` (`id`);
+
+--
+-- Constraints for table `workexperience`
+--
+ALTER TABLE `workexperience`
+  ADD CONSTRAINT `workexperience_ibfk_1` FOREIGN KEY (`workid`) REFERENCES `student_profile` (`workexp_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
