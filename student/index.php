@@ -9,8 +9,6 @@ if(!isset($_SESSION['name'])){
 }	
 
 $numjobs = getnumappliedjobs($_SESSION['name']);
-
-
 $numcompany = getnumcompanies();
 
 
