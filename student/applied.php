@@ -14,8 +14,11 @@ function getappliedjobshtml($jobs){
     foreach($jobs as $job){
         $jobshtml = $jobshtml."<tr>";
         $jobshtml = $jobshtml."<td>".$job['jid']."</td>";
-        $jobshtml = $jobshtml."<td>".$job['position']."</td>";
-        $jobshtml = $jobshtml."<td>".$job['skills']."</td>";
+		$jobshtml = $jobshtml."<td>".$job['title']."</td>";
+		$jobshtml = $jobshtml."<td>".$job['skills']."</td>";
+		$jobshtml = $jobshtml."<td>".$job['description']."</td>";
+		$jobshtml = $jobshtml."<td>".$job['salary']."</td>";
+		$jobshtml = $jobshtml."<td>".$job['CGPA']."</td>";
         $jobshtml = $jobshtml."</tr>";
     }
 
@@ -52,8 +55,11 @@ $appliedjobshtml = getappliedjobshtml($appliedjobs);
 					<table>
 					  <tr>
 					    <th>Id</th>
-					    <th>Position</th>
+					    <th>Title</th>
 					    <th>Skills</th>
+						<th>Description</th>
+						<th>Salary</th>
+						<th>CGPA</th>
 					  </tr>
 					  <?php 
                         echo $appliedjobshtml;

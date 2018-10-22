@@ -9,7 +9,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/main.css">
 
-		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 		
 		<script src="js/main.js"></script>
 	</head>
@@ -30,7 +31,7 @@
 				<ul>
 
 					<li>
-						<a href="https://github.com/SahilSahu">
+						<a href="#">
 							<img src="https://images-na.ssl-images-amazon.com/images/I/710JjlwJDZL._RI_.jpg" class="avatar" alt="avatar">
 						</a>
 					</li>
@@ -41,7 +42,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="upload.php">
 							<span><i class="fa fa-envelope"></i></span>
 							<span>Upload</span>
 						</a>
