@@ -38,4 +38,13 @@ function getnumcompanies(){
     }
 }
 
+function getalljobs(){
+    global $connection;
+    $query = "SELECT * FROM JOB";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_all(mysqli_query($connection, $query), MYSQLI_ASSOC);
+        return($row);
+    }
+}
+
 ?>
