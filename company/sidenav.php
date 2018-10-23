@@ -43,31 +43,31 @@
 					</li>
 					<li>
 						<a href="upload.php">
-							<span><i class="fa fa-envelope"></i></span>
+							<span><i class="fa fa-file-text-o"></i></span>
 							<span>Upload</span>
 						</a>
 					</li>
 					<li>
 						<a href="slisted.html">
-							<span><i class="fa fa-bar-chart"></i></span>
+							<span><i class="fa fa-users"></i></span>
 							<span>Shortlisted</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<span><i class="fa fa-credit-card-alt"></i></span>
-							<span>Analysis</span>
+							<span><i class="fa fa-user-md"></i></span>
+							<span>Profile</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span><i class="fa fa-comments-o"></i></span>
 							<span>Notifications</span>
 						</a>
 					</li>
 					<li>
 						<a href="logout.php">
-							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span><i class="fa fa-sign-out"></i></span>
 							<span>Logout</span>
 						</a>
 					</li>
