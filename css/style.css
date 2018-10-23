@@ -6,15 +6,15 @@
   --red: #dc3545;
   --orange: #fd7e14;
   --yellow: #ffc107;
-  --green: #28a745;
+  --green: #4f5696;
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #79ccab;
+  --primary: #4f5696;
   --secondary: #6c757d;
-  --success: #28a745;
+  --success: #4f5696;
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
@@ -74,7 +74,7 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #79ccab;
+  color: #4f5696;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
@@ -280,8 +280,8 @@ h3 {
 
 .btn-primary {
   color: #212529;
-  background-color: #79ccab;
-  border-color: #79ccab; }
+  background-color: #4f5696;
+  border-color: #4f5696; }
   .btn-primary:hover {
     color: #212529;
     background-color: #5dc19a;
@@ -291,8 +291,8 @@ h3 {
     box-shadow: 0 0 0 0.2rem rgba(121, 204, 171, 0.5); }
   .btn-primary:disabled {
     color: #212529;
-    background-color: #79ccab;
-    border-color: #79ccab; }
+    background-color: #4f5696;
+    border-color: #4f5696; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active {
     color: #212529;
     background-color: #54be94;
@@ -351,8 +351,8 @@ h3 {
       box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5); }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active {
     color: #212529;
-    background-color: #79ccab;
-    border-color: #79ccab; }
+    background-color: #4f5696;
+    border-color: #4f5696; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(121, 204, 171, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(121, 204, 171, 0.5); }
@@ -365,8 +365,8 @@ h3 {
       box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
   .btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745; }
+    background-color: #4f5696;
+    border-color: #4f5696; }
     .btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
@@ -577,7 +577,7 @@ h3 {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #79ccab;
+  background-color: #4f5696;
   -webkit-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease; }
@@ -717,10 +717,10 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #79ccab; }
+  color: #4f5696; }
   a:hover {
     text-decoration: none;
-    color: #79ccab; }
+    color: #4f5696; }
 
 h2, h3 {
   color: #000;
@@ -805,14 +805,18 @@ h2, h3 {
     background: transparent;
     border-color: #fff !important;
     color: #fff !important; }
+    .btn.btn-hover-blue:hover {
+      background: transparent;
+      border-color: blue !important;
+      color: red !important; }
   .btn.btn-primary {
-    background: #79ccab;
-    border: 2px solid #79ccab;
+    background: #4f5696;
+    border: 2px solid #4f5696;
     color: #fff; }
     .btn.btn-primary:hover {
-      border: 2px solid #79ccab;
+      border: 2px solid #4f5696;
       background: transparent;
-      color: #79ccab; }
+      color: #4f5696; }
     .btn.btn-primary:active, .btn.btn-primary:focus {
       color: #fff !important; }
 
@@ -836,7 +840,7 @@ h2, h3 {
     .featured-donate.overlay-color:before {
       position: absolute;
       content: "";
-      background: #28a745;
+      background: rgba(79, 86, 150, 1);
       left: 0;
       top: 0;
       right: 0;
@@ -870,7 +874,7 @@ h2, h3 {
   background: #f2f2f2; }
 
 .person-donate .donate-amount .amount {
-  background: #28a745;
+  background: #4f5696;
   color: #fff; }
 
 .site-section {
@@ -883,11 +887,11 @@ h2, h3 {
   .footer a {
     color: white !important; }
     .footer a:hover {
-      color: #79ccab !important; }
+      color: #4f5696 !important; }
 
 .block-6 .icon {
   margin-right: 30px;
-  color: #79ccab; }
+  color: #4f5696; }
   .block-6 .icon span:before {
     font-size: 50px; }
 
@@ -903,25 +907,35 @@ h2, h3 {
 
 .block-30 {
   background-size: cover;
-  background-color: #ccc;
+  background:
+    linear-gradient(
+    rgba(35,43,85,0.75),
+    rgba(35,43,85,0.95)),
+    url('../media/images/mslider3.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 0;
   position: relative; }
   @media (max-width: 991.98px) {
     .block-30 {
       background-position: center center !important; } }
   .block-30:before {
-    background: #000;
+    background: #fff;
     position: absolute;
     content: "";
-    top: 0;
+    top: 100%;
     left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: right;
+    transform: skewY(7deg);
     right: 0;
     bottom: 0;
-    opacity: .4;
+    opacity: 1;
     z-index: 0; }
   .block-30, .block-30 .row {
     min-height: 700px;
-    height: 100vh; }
+    height: 120vh; }
   .block-30 .btn {
     background: #fff;
     border-radius: 0;
@@ -954,7 +968,7 @@ h2, h3 {
   width: 40px;
   font-size: 18px;
   padding-top: 2px;
-  color: #79ccab; }
+  color: #4f5696; }
 
 .block-47 .block-47-image {
   -webkit-box-flex: 0;
@@ -1177,3 +1191,40 @@ h2, h3 {
     }
     
   
+/*something Fun*/
+#container {
+  perspective: 30px;
+}
+
+#inner {
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+}
+
+/*============================================================
+ * EXTRAS
+ *============================================================*/
+
+.demo-img {
+  border: solid white 5px;
+  background-image: url("../media/images/bg_2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#container:hover .demo-overlay {
+  opacity: 1;
+}
+
+#container:hover {
+  cursor: pointer;
+}
+
+.demo-overlay {
+  width: 100%;
+  padding: 12em 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.4s;
+}
