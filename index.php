@@ -11,21 +11,40 @@
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+      var i = 0;
+      var txt = 'Passion is the difference between having a job or a career...';
+      var speed = 50;
+
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("head").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+    </script>
+    <style type="text/css">
+      .navbar.scrolled {
+        background-color: #4f5696 !important;
+        transition: background-color 200ms linear;
+      }
+    </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<body onload="typeWriter()" id="top">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="position: fixed;">
         <div class="container">
           <a class="navbar-brand" href="index.html">PlaceHunt</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span>
+            <span class="oi oi-copywriting" style="color: white;"></span>
           </button>
     
           <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="about.html" class="nav-link">How we work</a></li>
-              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="#top" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="#work" class="nav-link">How we work</a></li>
+              <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
               <li class="nav-item"><a href="#studentsignup" class="nav-link">Student</a></li>
               <li class="nav-item"><a href="#companysignup" class="nav-link">Company</a></li>
             </ul>
@@ -38,11 +57,11 @@
 
       <div style="position: relative;">
             <div>
-              <div class="block-30 item" style="background-image: url('media/images/mslider3.jpg'); background-attachment: fixed;" data-stellar-background-ratio="0.5">
+              <div class="block-30 item" data-stellar-background-ratio="0.5">
                 <div class="container">
                   <div class="row align-items-center">
-                      <h3 style="padding-top: 20%; color: white; font-size: 10vh; z-index: 1; padding-bottom: 0%">Passion is the difference between having a job or a career</h2>
-                        <p style="z-index: 1; padding-top: 0%"><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-white py-3 px-5">Join Us ></a></p>
+                      <h2 id="head" style="color: white; font-size: 8.7vh;"></h2>
+                        <!-- <p style="z-index: 1;"><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-white py-3 px-5" style="z-index: 1; position: absolute;top:60%; left: 30%;">Join Us ></a></p> -->
                   </div>
                   
                 </div>
@@ -50,7 +69,7 @@
             </div>
         </div>
 
-        <div class="site-section">
+        <div class="site-section" id="work">
                 <div class="container">
                         <div class="row mb-5">
                                 <div class="col-md-12 text-center">
@@ -97,15 +116,26 @@
               </div> <!-- .site-section -->
 
 
-              <div class="featured-donate overlay-color" style="background-image: url('media/images/mslider2.jpg'); background-attachment: fixed;">
+              <div class="featured-donate overlay-color" id="about" style="background-image: url('media/images/mslider2.jpg'); background-attachment: fixed;">
     
                 <div class="container">
                   <div class="row">
-                    <div class="col-lg-8 order-lg-2 mb-3 mb-lg-0">
-                      <img src="media/images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
+                    <div class="col-lg-6 pr-lg-5">
+                      <!-- <img src="media/images/bg_2.jpg" alt="Image placeholder" class="img-fluid"> -->
+                      <div id="container">
+                        <div id="inner">
+                          <div class="demo-img">
+                            <div class="demo-overlay">
+                             
+                            </div>
+                          </div>
+                        </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 pr-lg-5">
+                    <div class="col-lg-6 order-lg-2 mb-3 mb-lg-0">
+                      <br>
                       <span class="featured-text mb-3 d-block">About Us</span>
+                      <hr>
                       <h2>Training and Placement Cell</h2>
                       <p class="mb-3">Welcome to the Training and Placement Cell of V.E.S Institute of Technology. V.E.S. Institute of Technology was established in 1984.
     
@@ -147,7 +177,7 @@
                                         <a href="#" title=""><img src="media/images/cc5.jpg" alt="" style="float:left;  padding: 1.5%"/></a>
                                     </div><!-- Client  -->
 
-                                    <p style="padding-top: 15%"><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-white py-3 px-5">See All Companies</a></p>
+                                    <p style="padding-top: 15%"><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-blue py-3 px-5">See All Companies</a></p>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +244,7 @@
                                 <div class="person-donate text-center bg-light pt-4">
                                     <img src="media/images/web.jpg" alt="Image placeholder" class="img-fluid">
                                     <div class="donate-info">
-                                        <h2>Android App Development</h2>
+                                        <h2>App<br> Development</h2>
                                         <span class="time d-block mb-3">Ionic + React Native</span>
                         
                                         <div class="donate-amount d-flex">
@@ -227,7 +257,7 @@
 
                   </div>
                   <div class="row col-lg-12 align-items-center">
-                  <p><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-white py-3 px-5">See All Positions</a></p>
+                  <p><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-blue py-3 px-5" style="position: absolute;left: 20%;">See All Positions</a></p>
                 </div>
                 </div>
                 
@@ -292,13 +322,13 @@
                     </div>
                   </div>
             
-                  <footer class="footer">
+                  <footer class="footer" id="contact">
                         <div class="container">
                           <div class="row mb-5">
                             <div class="col-md-9 col-lg-6">
                               <h3 style="color: white; padding-bottom: 8%">About Us</h3>
                               <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                              <p><a href="#" class="btn btn-primary px-4 py-3">Join Us</a></p>
+                              <p><a href="#" class="btn btn-primary btn-hover-white px-4 py-3">Join Us</a></p>
                             </div>
                             
                             <div class="col-md-9 col-lg-6">
@@ -328,6 +358,51 @@
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/movement.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $(".navbar");
+          $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+      });
+
+      $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                };
+              });
+            }
+          }
+        });
+    </script>
 </body>
 </html>
 
