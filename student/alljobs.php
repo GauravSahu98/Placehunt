@@ -27,7 +27,7 @@ function eligible($expected){
 function apply(){
 	global $connection;
 	$name=$_SESSION['name'];
-	console.log("hello");
+	echo $name;
 }
 
 function getalljobshtml($jobs){
@@ -41,7 +41,7 @@ function getalljobshtml($jobs){
 		$jobshtml = $jobshtml."<td>".$job['description']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['salary']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['CGPA']."</td>";
-		$jobshtml = $jobshtml."<td> <input type='button' class='ba' id='".$job['jid']."' onclick='apply()' value='apply'".eligible($job['CGPA'])."></td>";
+		$jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='apply(".$job['jid'].")' value='apply'".eligible($job['CGPA'])."></td>";
 		$jobshtml = $jobshtml."</tr>";
 
 
@@ -56,6 +56,19 @@ $alljobshtml = getalljobshtml($alljobs);
 ?>
 
 		<style>
+
+		.widget {
+			flex-basis: 350px;
+			flex-grow: 10;
+			height: 550px;
+			margin: 5%;
+			border-radius: 2px;
+			border: none;
+			background-color: #ffffff;
+			position: relative;
+			box-shadow: 0px 0px 25px black;
+			transition: all 0.81s ease;
+		}
 		table {
 		    border-collapse: collapse;
 		    width: 100%;
@@ -100,6 +113,13 @@ $alljobshtml = getalljobshtml($alljobs);
 			</div>
 		</div>
 		
+		<script type="text/javascript">
+			function apply(jid) {
+				<?php
+					echo 1+2;
+				?>
+			}
+		</script>
 
 	</body>
 </html>

@@ -210,7 +210,7 @@ if(!isset($_SESSION['name'])){
 			</div>
 			<div class="main">
 				<!-- multistep form -->
-				<form id="msform" action="processjob.php" method="POST">
+				<form id="msform" action="processjob.php" method="post">
 				  <!-- progressbar -->
 				  <ul id="progressbar">
 				    <li class="active">Job Specification</li>
@@ -218,28 +218,29 @@ if(!isset($_SESSION['name'])){
 				    <li>Package Details</li>
 				  </ul>
 				  <!-- fieldsets -->
-				  <fieldset>
+				  <fieldset form="msform">
 				    <h2 class="fs-title">Job Details</h2>
 				    <h3 class="fs-subtitle">Add Job title and description</h3>
 				    <hr><br>
 				    <input type="text" name="title" placeholder="Title" />
 				    <textarea name="description" placeholder="Description" style="height: 120px;"></textarea>
-				    <input type="button" name="next" class="next action-button" value="Next" />
+				    <input type="button" name="next" class="next action-button" value="Next" id="v3"/>
 				  </fieldset>
-				  <fieldset>
+				  <fieldset form="msform">
 				    <h2 class="fs-title">SkillSet</h2>
 				    <h3 class="fs-subtitle">Your Criteria</h3>
 				    <hr><br>
-				    <input type="text" name="cgpa" placeholder="CGPA criterion" />
+				    <input type="text" name="cgpa" placeholder="Avg_CGPA Criteria" />
 				    <textarea name="skills" placeholder="Skills Expected (example:Django,Laravel,Html,CSS etc)" style="height: 150px;"></textarea>
-				    <input type="button" name="next" class="next action-button" value="Next" />
+				    <input type="button" name="next" class="next action-button" value="Next" id="v2"/>
 				  </fieldset>
-				  <fieldset>
+				  <fieldset form="msform">
 				    <h2 class="fs-title">Package Offering</h2>
 				    <h3 class="fs-subtitle">Range of Offering</h3>
 				    <hr><br>
-				    <input type="text" name="package" placeholder="" />
-				    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+				    <br><br>
+				    <input title="Enter salary" type="text" name="package" placeholder="Package" />
+				    <input type="submit" name="submit" class="submit action-button" value="Submit" id="v3"/>
 				  </fieldset>
 				</form>
 				<div class="ag-dark-blur"></div>
@@ -463,9 +464,25 @@ if(!isset($_SESSION['name'])){
 				});
 			});
 
-			$(".submit").click(function(){
-				return false;
-			})
+			// $(".submit").click(function(){
+			// 	return false;
+			// })
+
+
+			$('v1').on('submit',function(e){
+			e.preventDefault();
+			alert('Validation was triggered!');
+			});
+
+			$('v2').on('submit',function(e){
+			e.preventDefault();
+			alert('Validation was triggered!');
+			});
+
+			$('v3').on('submit',function(e){
+			e.preventDefault();
+			alert('Validation was triggered!');
+			});
 		</script>
 	</body>
 </html>
