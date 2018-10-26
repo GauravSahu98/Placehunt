@@ -23,7 +23,7 @@ $numjobs = getnumpostedjobs($_SESSION['name']);
 				Dashboard
 			</div>
 			<div class="main">
-				<div class="widget" onclick="openNav()" style="background-image: url(https://www.dentistfriend.com//uploads/praxisimages/dental-jobs-opp.png);background-size: cover;">
+				<div class="widget" onclick="location.href='posted.php'" style="background-image: url(https://www.dentistfriend.com//uploads/praxisimages/dental-jobs-opp.png);background-size: cover;">
 
 					<div class="title">Posted Jobs</div>
 					<div class="overlay-wid">

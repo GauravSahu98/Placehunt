@@ -464,7 +464,7 @@ if(!isset($_SESSION['name'])){
 			});
 
 			$(".submit").click(function(){
-				return false;
+				return true;
 			})
 		</script>
 	</body>

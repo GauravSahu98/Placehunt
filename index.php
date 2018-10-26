@@ -9,6 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500|Gaegu:700" rel="stylesheet">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -41,8 +42,8 @@
               <div class="block-30 item" style="background-image: url('media/images/mslider3.jpg'); background-attachment: fixed;" data-stellar-background-ratio="0.5">
                 <div class="container">
                   <div class="row align-items-center">
-                      <h3 style="padding-top: 20%; color: white; font-size: 10vh; z-index: 1; padding-bottom: 0%">Passion is the difference between having a job or a career</h2>
-                        <p style="z-index: 1; padding-top: 0%"><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-white py-3 px-5">Join Us ></a></p>
+                      <h3 style="padding-top: 20%; color: white; font-size: 10vh; z-index: 1; padding-bottom: 0%">Passion is the difference between having a job and a career</h2>
+                        <p style="z-index: 1; padding-top: 0%"><a href="#studentsignup" class="btn btn-primary btn-hover-white py-3 px-5">Join Us ></a></p>
                   </div>
                   
                 </div>
@@ -305,9 +306,9 @@
                               <div class="block-23">
                                 <h3 style="color: white; padding-bottom: 8%">Contact Info</h3>
                                   <ul>
-                                    <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">VESIT</span></li>
                                     <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@ves.ac.in</span></a></li>
                                     <li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am - 5:00pm</span></li>
                                   </ul>
                                 </div>
@@ -318,7 +319,7 @@
                           <div class="row pt-5">
                             <div class="col-md-12 text-center">
                               <p>
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by someone
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
                               </p>
                             </div>
                           </div>
@@ -327,6 +328,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>

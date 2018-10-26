@@ -16,7 +16,6 @@ function getallcompanieshtml($companies){
         $companieshtml = $companieshtml."<td>".$company['cid']."</td>";
         $companieshtml = $companieshtml."<td>".$company['name']."</td>";
         $companieshtml = $companieshtml."<td>".$company['email']."</td>";
-        $companieshtml = $companieshtml."<td>".$company['contactno']."</td>";
         $companieshtml = $companieshtml."</tr>";
     }
 
@@ -55,7 +54,6 @@ $companieshtml = getallcompanieshtml($companies);
 					    <th>Id</th>
 					    <th>Name</th>
                         <th>Email</th>
-                        <th>Contact</th>
                       </tr>
                       <?php 
                         echo $companieshtml;

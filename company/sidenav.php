@@ -44,25 +44,25 @@
 					<li>
 						<a href="upload.php">
 							<span><i class="fa fa-envelope"></i></span>
-							<span>Upload</span>
+							<span>Upload Job</span>
 						</a>
 					</li>
 					<li>
-						<a href="slisted.html">
+						<a href="posted.php">
+							<span><i class="fa fa-envelope"></i></span>
+							<span>Posted Jobs</span>
+						</a>
+					</li>
+					<li>
+						<a href="applications.php">
+							<span><i class="fa fa-envelope"></i></span>
+							<span>Applications</span>
+						</a>
+					</li>
+					<li>
+						<a href="slisted.php">
 							<span><i class="fa fa-bar-chart"></i></span>
-							<span>Shortlisted</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span><i class="fa fa-credit-card-alt"></i></span>
-							<span>Analysis</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span><i class="fa fa-credit-card-alt"></i></span>
-							<span>Notifications</span>
+							<span>Shortlists</span>
 						</a>
 					</li>
 					<li>

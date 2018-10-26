@@ -90,7 +90,6 @@
 				  display:none;
 				}
 			}
-
 			#appl{
 				position: relative;
 			}
@@ -107,7 +106,6 @@
 				color: red;
 				font-size: 100px;
 			}
-
 			#appl>p{
 				display: block;
 				position: absolute;
@@ -117,7 +115,6 @@
 				left: 25%;
 				font-size: 36px;
 			}
-
 			#resume{
 				position: relative;
 			}
@@ -130,12 +127,10 @@
 				padding: 25% 25% 25% 25%;
 				transition: all 1.1s ease-in-out;
 			}
-
 			#resume:hover::before{
 				color: red;
 				font-size: 100px;
 			}
-
 			#tests{
 				position: relative;
 			}
@@ -148,12 +143,10 @@
 				padding: 25% 25% 25% 25%;
 				transition: all 1.1s ease-in-out;
 			}
-
 			#tests:hover::before{
 				color: red;
 				font-size: 100px;
 			}
-
 			#pfmance{
 				position: relative;
 			}
@@ -166,12 +159,10 @@
 				padding: 25% 25% 25% 25%;
 				transition: all 1.1s ease-in-out;
 			}
-
 			#pfmance:hover::before{
 				color: red;
 				font-size: 100px;
 			}
-
 			#cmpn{
 				position: relative;
 			}
@@ -184,12 +175,10 @@
 				padding: 25% 25% 25% 25%;
 				transition: all 1.1s ease-in-out;
 			}
-
 			#cmpn:hover::before{
 				color: red;
 				font-size: 100px;
 			}
-
 			#profile{
 				position: relative;
 			}
@@ -202,17 +191,13 @@
 				padding: 25% 25% 25% 25%;
 				transition: all 1.1s ease-in-out;
 			}
-
 			#profile:hover::before{
 				color: red;
 				font-size: 100px;
 			}
-
-
 			input[type=file]{
 			padding:10px;
 			background:#2d2d2d;}
-
 			.button_s {
 			    background-color: rgba(0,0,0,0);
 			    border: 2px solid blue;
@@ -228,7 +213,6 @@
 			    border-radius: 10px 10px 10px 0px;
 			    transition: all 0.3s ease-in-out;
 			}
-
 			.button_s:hover {
 				background: blue;
 				color: white;
@@ -236,18 +220,13 @@
 		</style>
 
 		<script type="text/javascript">
-
 			function myFunction() {
 			    document.getElementById("edit").contentEditable = true;
 			    document.getElementById("demo").innerHTML = "The element above is now editable. Try to change its text.";
 			}
-
-
 			function saveEdits(){
 				var editElem = document.getElementById('edit');
-
 				var userVersion = editElem.innerHTML;
-
 				localStorage.userEdits = userVersion;
 	
 			}
@@ -256,16 +235,13 @@
 				if(localStorage.userEdits != null)
 					document.getElementById('edit').innerHTML = localStorage.userEdits;
 			}
-
 			// function readURL(input) {
    //          if (input.files && input.files[0]) {
    //              var reader = new FileReader();
-
    //              reader.onload = function (e) {
    //                  $('#blah')
    //                      .attr('src', e.target.result);
    //              };
-
    //              reader.readAsDataURL(input.files[0]);
    //          }
    //      }
@@ -583,8 +559,6 @@
 <!-- 
 <html>
 <title></title>
-
 <body class="light-grey">
-
 </body>
 </html> -->

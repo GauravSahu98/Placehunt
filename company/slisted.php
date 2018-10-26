@@ -65,13 +65,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="index.html">
+						<a href="index.php">
 							<span><i class="fa fa-user"></i></span>
 							<span>Dashboard</span>
 						</a>
 					</li>
 					<li>
-						<a href="upload.html">
+						<a href="upload.php">
 
 							<span><i class="fa fa-envelope"></i></span>
 							<span>Upload</span>
@@ -121,8 +121,11 @@
 					  <tr>
 					    <td>Sahil</td>
 					    <td>Sahu</td>
-					    <td>700</td>
-					    <td><button class="button">view resume</button></td>
+							<td>700</td>
+							<form method="POST" action="mail.php">
+							<input type="hidden" value="" name="">
+							<td><button class="button" type="submit">view resume</button></td>
+	</form>
 					  </tr>
 					  <tr>
 					    <td>Anurag</td>
@@ -685,3 +688,26 @@
 		</div>
 	</body>
 </html>
+
+
+
+<?php
+$to = "2016.anurag.shelar@ves.ac.in";
+$subject = "Testing PHP mailer";
+
+$message = "<b>This is HTML message.</b>";
+$message .= "<h1>This is headline.</h1>";
+
+$header = "From:abc@somedomain.com \r\n";
+$header .= "Cc:afgh@somedomain.com \r\n";
+$header .= "MIME-Version: 1.0\r\n";
+$header .= "Content-type: text/html\r\n";
+
+$retval = mail ($to,$subject,$message,$header);
+
+if( $retval == true ) {
+	 echo "Message sent successfully...";
+}else {
+	 echo "Message could not be sent...";
+}
+?>
