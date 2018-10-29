@@ -65,13 +65,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="index.html">
+						<a href="index.php">
 							<span><i class="fa fa-user"></i></span>
 							<span>Dashboard</span>
 						</a>
 					</li>
 					<li>
-						<a href="upload.html">
+						<a href="upload.php">
 
 							<span><i class="fa fa-envelope"></i></span>
 							<span>Upload</span>
@@ -121,8 +121,11 @@
 					  <tr>
 					    <td>Sahil</td>
 					    <td>Sahu</td>
-					    <td>700</td>
-					    <td><button class="button">view resume</button></td>
+							<td>700</td>
+							<form method="POST" action="mail.php">
+							<input type="hidden" value="" name="">
+							<td><button class="button" type="submit">view resume</button></td>
+	</form>
 					  </tr>
 					  <tr>
 					    <td>Anurag</td>

@@ -31,7 +31,7 @@ $numcompany = getnumcompanies();
 				<div class="widget" id="pfmance">
 					<div class="title">Track Performance</div>
 				</div>
-				<div class="widget" onclick="location.href='profile.php' " id="profile">
+				<div class="widget" onclick="location.href='profile_view.php' " id="profile">
 					<div class="title">View/Edit Profile</div>
 				</div>
 			</div>

@@ -19,3 +19,14 @@ function getnumpostedjobs($name){
         return($row);
     }
 }
+
+function getapplications($name){
+    global $connection;
+    $query = "SELECT S.NAME, S.EMAIL, J.JID, J.TITLE, J.SKILLS FROM (SELECT * FROM STUDENT WHERE SID IN (SELECT SID FROM APPLIES WHERE JID IN (SELECT JID FROM POSTS WHERE CID=(SELECT CID FROM COMPANY WHERE NAME= '$name')))) AS S, (SELECT * FROM JOB WHERE JID IN (SELECT JID FROM POSTS WHERE CID=(SELECT CID FROM COMPANY WHERE NAME= '$name'))) AS J";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_all(mysqli_query($connection, $query), MYSQLI_ASSOC);
+        return($row);
+    }
+}
+
+?>

@@ -13,17 +13,11 @@ $numjobs = getnumpostedjobs($_SESSION['name']);
 
 ?>
 		<div class="main-content">
-			<div id="myNav" class="overlay">
-			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			  <div class="overlay-content">
-			    <center><a href="https://www.google.co.in/"><span><i class="fa fa-spinner"></i></span>&nbsp;&nbsp;Visit Page</a></center>
-			  </div>
-			</div>
 			<div class="title">
 				Dashboard
 			</div>
 			<div class="main">
-				<div class="widget" onclick="openNav()" style="background-image: url(https://www.dentistfriend.com//uploads/praxisimages/dental-jobs-opp.png);background-size: cover;">
+				<div class="widget" onclick="location.href='posted.php'" style="background-image: url(https://www.dentistfriend.com//uploads/praxisimages/dental-jobs-opp.png);background-size: cover;">
 
 					<div class="title">Posted Jobs</div>
 					<div class="overlay-wid">
@@ -32,31 +26,23 @@ $numjobs = getnumpostedjobs($_SESSION['name']);
 				</div>
 				<div class="widget" onclick="openNav()" style="background-image: url(https://www.shareicon.net/data/512x512/2017/01/06/868273_sign_512x512.png);background-size: cover;">
 					<div class="title">Upload a job</div>
-					<div class="overlay-wid">
+					<!-- <div class="overlay-wid">
 					    <div class="text">Here You can </div>
-					</div>
+					</div> -->
 				</div>
 				<div class="widget" onclick="openNav()">
 					<div class="title">Shortlisted Candidates</div>
-					<div class="overlay-wid">
+					<!-- <div class="overlay-wid">
 					    <div class="text">Here You can view your applied jobs</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="widget" onclick="openNav()">
 					<div class="title">Company Profile</div>
-					<div class="overlay-wid">
+					<!-- <div class="overlay-wid">
 					    <div class="text">Here You can view your applied jobs</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
-		<script>
-		function openNav() {
-		  document.getElementById("myNav").style.width = "100%";
-		}
-		function closeNav() {
-		  document.getElementById("myNav").style.width = "0%";
-		}
-		</script>
 	</body>
 </html>

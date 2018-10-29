@@ -36,29 +36,24 @@ $numcompany = getallcompanies();
 					<div class="title">Problems</div>
 					<table>
 					  <tr>
-					    <th>First Name</th>
-					    <th>Last Name</th>
-					    <th>Points</th>
+					    <th>id</th>
+					    <th>Problem</th>
+					    <th>Solve</th>
 					  </tr>
 					  <tr>
-					    <td>Peter</td>
-					    <td>Griffin</td>
-					    <td>$100</td>
+					    <td>1</td>
+					    <td>Reverse Array</td>
+					    <td><a href="problem2.html" target="_blank"><button>Solve</button></a></td>
 					  </tr>
 					  <tr>
-					    <td>Lois</td>
-					    <td>Griffin</td>
-					    <td>$150</td>
+					    <td>2</td>
+					    <td>Caesar Cipher</td>
+					    <td><a href="problem3.html" target="_blank"><button>Solve</button></a></td>
 					  </tr>
 					  <tr>
-					    <td>Joe</td>
-					    <td>Swanson</td>
-					    <td>$300</td>
-					  </tr>
-					  <tr>
-					    <td>Cleveland</td>
-					    <td>Brown</td>
-					    <td>$250</td>
+					    <td>3</td>
+					    <td>Longest Common Subsequence</td>
+					    <td><a href="problem1.html" target="_blank"><button>Solve</button></a></td>
 					  </tr>
 					</table>
 					<!--div class="overlay-wid">
