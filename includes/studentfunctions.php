@@ -47,4 +47,13 @@ function getalljobs(){
     }
 }
 
+function getsid($name) {
+    global $connection;
+    $query = "SELECT SID FROM STUDENT WHERE NAME='$name'";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        return($row);
+    }
+}
+
 ?>

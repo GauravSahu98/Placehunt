@@ -24,13 +24,9 @@ function eligible($expected){
     }
 }
 
-function apply(){
-	global $connection;
-	$name=$_SESSION['name'];
-	echo $name;
-}
-
 function getalljobshtml($jobs){
+	global $connection;
+	$sid = getsid($_SESSION['name'])['SID'];
     $jobshtml = "";
     foreach($jobs as $job){
 
@@ -41,7 +37,7 @@ function getalljobshtml($jobs){
 		$jobshtml = $jobshtml."<td>".$job['description']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['salary']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['CGPA']."</td>";
-		$jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='apply(".$job['jid'].")' value='apply'".eligible($job['CGPA'])."></td>";
+		$jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='apply(".$job['jid'].",".$sid.")' value='apply'".eligible($job['CGPA'])."></td>";
 		$jobshtml = $jobshtml."</tr>";
 
 
@@ -114,12 +110,32 @@ $alljobshtml = getalljobshtml($alljobs);
 		</div>
 		
 		<script type="text/javascript">
-			function apply(jid) {
-				<?php
-					echo 1+2;
-				?>
+			function apply($jid, $sid) {
+			$.ajax({
+               url: "apply.php",
+               method:"POST",
+               data:{jid: $jid, sid: $sid},
+               dataType:"json",
+               success:function(response){
+                 if(response.applied==true)
+                 {
+                    toastr["success"]("Logged in successfully", $uname);
+                    setTimeout("location.href = 'company/index.php'", 1500);
+                 }else{
+                    toastr["error"]("Invalid credentials", "We're sorry");
+                    setTimeout("location.href = 'index.php#companysignup'", 1500);
+                 }
+                 
+               },
+               error: function () {
+                   toastr["error"]("Invalid credentials", "We're sorry");
+                   setTimeout("location.href = 'index.php#companysignup'", 1500);
+               }  
+                   
+               
+           });
 			}
 		</script>
 
 	</body>
-</html>
+</html>s

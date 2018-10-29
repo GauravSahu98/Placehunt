@@ -48,7 +48,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="slisted.html">
+						<a href="slisted.php">
 							<span><i class="fa fa-bar-chart"></i></span>
 							<span>Shortlisted</span>
 						</a>

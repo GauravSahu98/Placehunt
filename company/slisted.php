@@ -166,7 +166,9 @@
 					    <td>Sahil</td>
 					    <td>Sahu</td>
 					    <td>700</td>
-					    <td><button class="button">view resume</button></td>
+					    <form action="mail.php">
+					    <td><input type="submit" >view resume</button></td>
+					</form>
 					  </tr>
 					  <tr>
 					    <td>Anurag</td>
@@ -685,3 +687,6 @@
 		</div>
 	</body>
 </html>
+
+$jobshtml = $jobshtml."<form><td><input type='hidden' name='jid' value="$job['jid']"><input type='hidden' name='sname' value='"$_SESSION['name']"'><input type='submit' value='apply'>".eligible($job['CGPA'])."></td></form>";
+		$jobshtml = $jobshtml."</tr>";
