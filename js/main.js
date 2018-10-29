@@ -101,14 +101,14 @@ $(document).ready(function($) {
 
 	"use strict";
 
-	$(window).stellar({
-    responsive: false,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: 'scroll'
-  });
+	// $(window).stellar({
+  //   responsive: false,
+  //   parallaxBackgrounds: true,
+  //   parallaxElements: true,
+  //   horizontalScrolling: false,
+  //   hideDistantElements: false,
+  //   scrollProperty: 'scroll'
+  // });
 
 
 	// loader

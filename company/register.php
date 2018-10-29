@@ -1,11 +1,8 @@
 <?php
 
 require_once(__DIR__.'/../includes/db.php');
-$username="";
-$emailid="";
-$password="";
 
-    if(isset($_POST['csignup'])){
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username=$_POST['username'];
         $emailid=$_POST['email'];
         $password=password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -13,19 +10,39 @@ $password="";
         $username=mysqli_real_escape_string($connection,$username);
         $emailid=mysqli_real_escape_string($connection,$emailid);
         
-        $query="Select * from company where username='$username'";
-        $check_query=mysqli_query($connection,$query);
-        if(mysqli_num_rows($check_query)>0){
-            echo "Company already exists";
-            die($connection);
+        $query="Select * from company where name='$username'";
+        $checkquery = mysqli_query($connection,$query);
+        if($checkquery){
+            if(mysqli_num_rows($checkquery)>0){
+                $result["registered"] = false;
+                $result["exists"] = true;
+                $result["success"]=true;
+                // convert the result array to json format
+                // die($connection);
+                echo json_encode($result);
+                exit;
+            
+            }
         }
         $query="INSERT INTO company(name, password, email) VALUES('$username','$password','$emailid')";
         
         if(mysqli_query($connection, $query)) {
-            header("location: index.php");
+            $result["registered"] = true;
+            $result["exists"] = false;
+            $result["success"]=true;
+            // convert the result array to json format
+            echo json_encode($result);
+            exit;
+            // header("location: index.php");
         }
         else {
-            echo "Error: Could not register";
+            $result["registered"] = false;
+            $result["exists"] = false;
+            $result["success"]=true;
+            // convert the result array to json format
+            echo json_encode($result);
+            exit;
+            // echo "Error: Could not register";
         }
         
 	

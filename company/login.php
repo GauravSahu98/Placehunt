@@ -19,11 +19,20 @@
          
          if($count == 1 and password_verify($mypassword, $row['password'])) {
          $_SESSION['name'] = $myusername;
-         
-         header("location: index.php");
+         $result["loggedin"] = true;
+         $result["success"]=true;
+         // convert the result array to json format
+         echo json_encode($result);
+         exit;
+        
+        }else{
+            $result["loggedin"] = false;
+        	$result["success"]=true;
+	    	echo json_encode($result);
+	    	exit;
          }
       }
 
-      echo "Error: Invalid login username or password";
+    //   echo "Error: Invalid login username or password";
 }
 ?>

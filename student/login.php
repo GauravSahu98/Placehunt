@@ -17,12 +17,24 @@
          $count = mysqli_num_rows(mysqli_query($connection,$sql));
 
          if($count == 1 and password_verify($mypassword, $row['password'])) {
-         $_SESSION['name'] = $row['name'];
-         
-         header("location: index.php");
+            $_SESSION['name'] = $row['name'];
+            $result["loggedin"] = true;
+            $result["success"]=true;
+            // convert the result array to json format
+            echo json_encode($result);
+            exit;
+            //  header("location: index.php");
+         }else{
+            $result["loggedin"] = false;
+        	$result["success"]=true;
+	    	echo json_encode($result);
+	    	exit;
          }
       }
       
-      echo "Error: Invalid login username or password";
+    //   echo "Error: Invalid login username or password";
    }
+
+   
 ?>
+
