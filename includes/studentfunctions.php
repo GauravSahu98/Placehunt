@@ -56,4 +56,24 @@ function getsid($name) {
     }
 }
 
+
+function getemailid($name) {
+    global $connection;
+    $query = "SELECT email FROM STUDENT WHERE NAME='$name'";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        return($row);
+    }
+}
+
+function getstudentprofile($sid){
+    global $connection;
+
+    $query="SELECT * FROM student_profile where proid='$sid'"; 
+
+        if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        return($row);
+    }
+}
 ?>

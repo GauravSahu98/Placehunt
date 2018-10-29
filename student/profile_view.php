@@ -1,5 +1,17 @@
 <?php
 
+require_once(__DIR__.'/../includes/db.php');
+require_once(__DIR__.'/../includes/studentfunctions.php');
+   if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$name=$_SESSION['name'];
+$sid=getsid($name)['SID'];
+$result=getstudentprofile($sid);
+$email=getemailid($name)['email'];
+
+
+// print_r($result);
 
 ?>
 
@@ -120,7 +132,7 @@
 				left: 25%;
 				font-size: 36px;
 			}
-			#resume{
+	-		#resume{
 				position: relative;
 			}
 			#resume:before{
@@ -355,20 +367,24 @@
 
 				          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNWkbzIr0rgBhjLJ1OqE7gmDEU5RqOunqwW-na5kcqKfr4tZx5eg" style="width:100%" alt="Profile img" id="blah">
 				          <div class="display-bottomleft container text-white">
-				            <h2 id="name"><b>Sahil Sahu</b></h2>
+				            <h2 id="name"><b><?php echo "$name" ?></b></h2>
 				          </div>
 				        </div>
 				        <div class="container">
-				          <p id="title"><i class="fa fa-briefcase fa-fw margin-right large text-green"></i>Web Designer & Developer</p>
-				          <p id="location"><i class="fa fa-home fa-fw margin-right large text-green"></i>Goregaon, Mumbai.</p>
-				          <p id="email"><i class="fa fa-envelope fa-fw margin-right large text-green"></i>sahu.sahil599@gmail.com</p>
-				          <p id="contact"><i class="fa fa-phone fa-fw margin-right large text-green"></i>+91-9769831397</p>
-				          <p id="DOB"><i class="fa fa-birthday-cake fa-fw margin-right large text-green"></i>Yaad karo tumlog 1999</p>
+				          <p id="title"><i class="fa fa-briefcase fa-fw margin-right large text-green"></i><?php echo $result['about'] ?></p>
+				          <p id="location"><i class="fa fa-home fa-fw margin-right large text-green"></i>
+				          	<?php echo $result['location'] ?></p>
+				          <p id="email"><i class="fa fa-envelope fa-fw margin-right large text-green"></i>
+				          	<?php echo $email ?></p>
+				          <p id="contact"><i class="fa fa-phone fa-fw margin-right large text-green"></i>
+				          	<?php echo $result['contact'] ?></p>
+				          <p id="DOB"><i class="fa fa-birthday-cake fa-fw margin-right large text-green"></i>
+				          	<?php echo $result['dob'] ?></p>
 				          <hr>
 
 				          
 				          <p class="large text-theme text-black"><b><i class="fa fa-language fa-fw margin-right text-green"></i>Languages</b></p>
-				          <p id="languages">English, Hindi, French</p>
+				          <p id="languages"><?php echo $result['languages'] ?></p>
 				          
 				        </div>
 				      </div><br>
@@ -550,6 +566,8 @@
 	$jsondata = JSON.stringify($dict);
 	console.log($jsondata);
 
+	console.log("hii");
+
 	$.ajax({
 				url: "profileprocess.php",
 				method:"POST",
@@ -574,12 +592,7 @@
 				
 		});
  });
+
 </script>
 	</body>
 </html>
-<!-- 
-<html>
-<title></title>
-<body class="light-grey">
-</body>
-</html> -->

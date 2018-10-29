@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
     <script>
@@ -35,7 +34,7 @@
             "hideMethod": "fadeOut"
             "showMethod": "fadeIn",
           }
-  </script>
+    </script>
     <script type="text/javascript">
       var i = 0;
       var txt = 'Passion is the difference between having a job or a career...';
@@ -55,6 +54,7 @@
         transition: background-color 200ms linear;
       }
     </style>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body onload="typeWriter()" id="top">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="position: fixed;">

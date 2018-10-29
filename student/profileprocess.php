@@ -1,7 +1,15 @@
 <?php
 
+
+
+
+
+
+
+
 // echo $_POST['data']['name'];
    require_once(__DIR__.'/../includes/db.php');
+   require_once(__DIR__.'/../includes/studentfunctions.php');
    if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -45,12 +53,21 @@
     // $username = mysqli_real_escape_string($connection,$_POST['data']['name']);
     // $username = mysqli_real_escape_string($connection,$_POST['data']['name']);
     
+   
+    $sid=getsid($name)['SID'];
+    
 
-    $sql = "INSERT INTO student_profile (about,location,contact,dob,languages) values ($about,$location,$contact,$dob,$languages)";
+
+
+
+
+    $sql="UPDATE student_profile SET about='$about', location='$location', contact='$contact',dob='$dob',languages='$languages' WHERE proid='$sid'"; 
+
+   
 
     if(mysqli_query($connection, $sql)) {
         $response["updated"] = true;
-        
+        $response["success"]=true;
         // convert the result array to json format
         echo json_encode($response);
         exit;
@@ -58,9 +75,9 @@
     }
     else {
         $response["updated"] = false;
-        
+         $response["success"]=true;
         // convert the result array to json format
-        echo json_encode($result);
+        echo json_encode($response);
         exit;
     }
     
