@@ -17,8 +17,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
-          toastr.options = {
     <script>
+    toastr.options = {
             "closeButton": true,
             "debug": false,
             "newestOnTop": true,
@@ -282,7 +282,7 @@
 
                   </div>
                   <div class="row col-lg-12 align-items-center">
-                  <p><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-blue py-3 px-5" style="position: absolute;left: 20%;">See All Positions</a></p>
+                  <p><a href="https://ves.ac.in/vesit/" class="btn btn-primary btn-hover-blue py-3 px-5" style="position: absolute;left: 40%;">See All Positions</a></p>
                 </div>
                 </div>
                 
@@ -379,8 +379,9 @@
                           </div>
                         </div>
                       </footer>
-    <script type="text/javascript">
+
     <script src="js/movement.js"></script>
+    <script type="text/javascript">
       $(function () {
         $(document).scroll(function () {
           var $nav = $(".navbar");
