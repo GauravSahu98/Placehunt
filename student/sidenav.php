@@ -1,3 +1,16 @@
+
+<?php 
+
+require_once('sidenav.php');
+require_once('../includes/studentfunctions.php');
+
+session_start();
+if(!isset($_SESSION['name'])){
+	header('location: ../index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,7 +36,8 @@
 				<div class="user-field">
 				  <a href="#" class="notifications"><i class="fa fa-bell-o" aria-hidden="true"><span class="circle">5+</span></i></a>
 				  <a href="#">
-				    <div class="user-img"></div>
+				    
+				   <p>HIII <?php echo $_SESSION['name'] ?></p>
 				    <i class="fa fa-caret-down" aria-hidden="true"></i>
 				  </a>
 				</div>
@@ -54,6 +68,13 @@
 								<span>Applied Jobs</span>
 							</a>
 						</li>
+						<li>
+							<a href="alljobs.php">
+								<span><i class="fa fa-credit-card-alt"></i></span>
+								<span>All Jobs</span>
+							</a>
+						</li>
+
 						<li>
 							<a href="problems.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>

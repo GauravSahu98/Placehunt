@@ -67,7 +67,7 @@
 					</li>
 					<li>
 						<a href="logout.php">
-							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span><i class="fa fa-sign-out"></i></span>
 							<span>Logout</span>
 						</a>
 					</li>

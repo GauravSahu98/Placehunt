@@ -35,9 +35,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-first-aid-kit:before { content: "\f100"; }
-.flaticon-donation:before { content: "\f101"; }
-.flaticon-donate:before { content: "\f102"; }
-.flaticon-people:before { content: "\f103"; }
-.flaticon-charity:before { content: "\f104"; }
-.flaticon-heart-box:before { content: "\f105"; }
+.flaticon-first-aid-kit:before { content: "\f100"; color: blue;}
+.flaticon-donation:before { content: "\f101"; color: blue; }
+.flaticon-donate:before { content: "\f102"; color: blue; }
+.flaticon-people:before { content: "\f103"; color: blue; }
+.flaticon-charity:before { content: "\f104"; color: blue; }
+.flaticon-heart-box:before { content: "\f105"; color: blue; }
