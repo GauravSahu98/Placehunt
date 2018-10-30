@@ -9,9 +9,13 @@ $name=$_SESSION['name'];
 $sid=getsid($name)['SID'];
 $result=getstudentprofile($sid);
 $email=getemailid($name)['email'];
-
-
+$workexp=getworkexperience($sid);
+$project=getproject($sid);
+$education=geteducation($sid);
+$award=getaward($sid);
+$social=getsocial($sid);
 // print_r($result);
+
 
 ?>
 
@@ -30,12 +34,12 @@ $email=getemailid($name)['email'];
 		<link rel="stylesheet" href="css/main.css">
 
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-		
+
 		<script src="js/main.js"></script>
 		<style type="text/css">
 		html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 		.social a i {padding:10px;}
-			
+
 			.header>.user-field{
 			  display: inline-block;
 			  float: right;
@@ -47,7 +51,7 @@ $email=getemailid($name)['email'];
 			  padding-right: 20px;
 			  text-decoration:none;
 			  vertical-align: top;
-			  height: 30px; 
+			  height: 30px;
 			}
 			.notifications
 			{
@@ -69,7 +73,7 @@ $email=getemailid($name)['email'];
 			  left: 20px;
 			}
 			.user-img{
-			  background: url(https://s3.amazonaws.com/uifaces/faces/twitter/k/128.jpg) no-repeat center center; 
+			  background: url(https://s3.amazonaws.com/uifaces/faces/twitter/k/128.jpg) no-repeat center center;
 			  -webkit-background-size: cover;
 			  -moz-background-size: cover;
 			  -o-background-size: cover;
@@ -91,7 +95,7 @@ $email=getemailid($name)['email'];
 				  display:none;
 				}
 				.user-field>a{
-				  display:none; 
+				  display:none;
 				}
 				.notifications
 				{
@@ -245,9 +249,9 @@ $email=getemailid($name)['email'];
 				var editElem = document.getElementById('edit');
 				var userVersion = editElem.innerHTML;
 				localStorage.userEdits = userVersion;
-	
+
 			}
-			
+
 			function checkEdits(){
 				if(localStorage.userEdits != null)
 					document.getElementById('edit').innerHTML = localStorage.userEdits;
@@ -264,7 +268,7 @@ $email=getemailid($name)['email'];
    //      }
 		</script>
 	</head>
-	<body class="light-grey" onload="checkEdits()">
+	<body class="light-grey">
 
 			<div class="header">
 				<div class="logo">
@@ -344,7 +348,7 @@ $email=getemailid($name)['email'];
 						</li>
 					</ul>
 				</nav>
-				
+
 			</div>
 
 			<div class="main-content">
@@ -357,10 +361,10 @@ $email=getemailid($name)['email'];
 				<div class="content margin-top" style="max-width:1400px;">
 				  <!-- The Grid -->
 				  <div class="row-padding" id="edit">
-				  
+
 				    <!-- Left Column -->
 				    <div class="third">
-				    
+
 				      <div class="white text-grey card-4">
 				        <div class="display-container">
 
@@ -382,106 +386,106 @@ $email=getemailid($name)['email'];
 				          	<?php echo $result['dob'] ?></p>
 				          <hr>
 
-				          
+
 				          <p class="large text-theme text-black"><b><i class="fa fa-language fa-fw margin-right text-green"></i>Languages</b></p>
 				          <p id="languages"><?php echo $result['languages'] ?></p>
-				          
+
 				        </div>
 				      </div><br>
 
-			
+
 				    <!-- End Left Column -->
 				    </div>
 
 				    <!-- Right Column -->
 				    <div class="twothird">
-				    
+
 				      <div class="container card-2 white margin-bottom">
-				        <h2 class="text-black padding-16"><i class="fa fa-suitcase fa-fw margin-right xxlarge text-green"></i>Professional Work</h2>
+				        <p><h2 class="text-black padding-16"><i class="fa fa-suitcase fa-fw margin-right xxlarge text-green"></i>Professional Work</h2></p>
 				        <div class="container">
-									<h5 class="opacity" id="designation1"><b>Web Designer & Developer</b></h5>
-									<h5><h6 class="opacity" id="organisation1"><b>Sahil Sahu Pvt Ltd.</b></h6></h5>
-				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i>Oct 2014 - <span class="tag green round">Current</span></h6>
+									<h5 class="opacity" id="designation1"><b> <?php echo $workexp['designation1'] ?></b></h5>
+									<h5><h6 class="opacity" id="organisation1"><b><?php echo $workexp['organization1'] ?></b></h6></h5>
+				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan1'] ?> <span class="tag green round">Current</span></h6>
 				          <p></p>
 				          <hr>
 
-									<h5  class="opacity" id="designation2"><b>Web Designer & Developer</b></h5>
-									<h5><h6 class="opacity" id="organisation2"><b>Sahil Sahu Pvt Ltd.</b></h6></h5>
-				          <h6 class="text-green" id="timespan2"><i class="fa fa-calendar fa-fw margin-right"></i>Oct 2014 - <span class="tag green round">Current</span></h6>
+									<h5  class="opacity" id="designation2"><b><?php echo $workexp['designation2'] ?></b></h5>
+									<h5><h6 class="opacity" id="organisation2"><b><?php echo $workexp['organization2'] ?></b></h6></h5>
+				          <h6 class="text-green" id="timespan2"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan2'] ?></h6>
 									<p></p>
-									
+
 								</div>
 	 </div>
-								
+
 	 <div class="container card-2 white margin-bottom">
 				<h2 class="text-black padding-16"><i class="fa fa-cubes fa-fw margin-right xxlarge text-green"></i>Projects</h2>
 				        <div class="container">
-				            <h5 class="opacity" id="projname1"><b> One</b></h5><h6 class="opacity" id="projdesc1"> (One liner) </h6>
+				            <h5 class="opacity" id="projname1"><b> <?php echo $project['name'] ?></b></h5><h6 class="opacity" id="projdesc1"><?php echo $project['description'] ?></h6>
 				            <hr>
 				            <h5 class="opacity" id="projname2"><b> Two</b></h5><h6 class="opacity" id="projdesc2"> (One liner) </h6>
 				            <hr>
 				            <h5 class="opacity" id="projname3"><b> Three</b></h5><h6 class="opacity" id="projdesc3"> (One liner) </h6>
 				            <hr>
-				            
+
 				        </div>
-				        
+
 				      </div>
 
 				      <div class="container card-2 white margin-bottom">
 				        <h2 class="text-black padding-16"><i class="fa fa-graduation-cap fa-fw margin-right xxlarge text-green"></i>Education</h2>
 				        <div class="container">
-				          <h5 class="opacity" id="eduname1"><b>Vivekanand Education Society's Institute of Technology, Chembur</b></h5>
-				          <h6 class="text-green" id="eduduration1"><i class="fa fa-calendar fa-fw margin-right"></i>2016 - Present</h6>
+				          <h5 class="opacity" id="eduname1"><b><?php echo $education['grad_name'] ?> </b></h5>
+				          <h6 class="text-green" id="eduduration1"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $education['grad_duration'] ?></h6>
 									<p>B.E.</p>
-									<p id="eduscore1" style="display:inline;"> 9.0 </p>&nbsp;/&nbsp;10.0
+									<p id="eduscore1" style="display:inline;"><?php echo $education['grad_cgpa'] ?></p>&nbsp;/&nbsp;10.0
 				          <hr>
 				        </div>
 				        <div class="container">
-				          <h5 class="opacity" id="eduname2"><b>SIES College of Arts and Science, Sion</b></h5>
-				          <h6 class="text-green" id="eduduration2"><i class="fa fa-calendar fa-fw margin-right"></i>2014 - 2016</h6>
+				          <h5 class="opacity" id="eduname2"><b><?php echo $education['college_name'] ?></b></h5>
+				          <h6 class="text-green" id="eduduration2"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $education['college_duration'] ?></h6>
 				          <p>H.S.C</p>
-									<p id="eduscore2" style="display:inline;">93.20</p>&nbsp;%
+									<p id="eduscore2" style="display:inline;"><?php echo $education['hsc_marks'] ?></p>&nbsp;%
 				          <hr>
 				        </div>
 				        <div class="container">
-				          <h5 class="opacity" id="eduname3"><b>Holy Cross High School, Kurla</b></h5>
-				          <h6 class="text-green" id="eduduration3"><i class="fa fa-calendar fa-fw margin-right"></i>2002 - 2014</h6>
+				          <h5 class="opacity" id="eduname3"><b><?php echo $education['school_name'] ?></b></h5>
+				          <h6 class="text-green" id="eduduration3"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $education['school_duration'] ?></h6>
 				          <p>S.S.C</p>
-									<p id="eduscore3" style="display:inline;">95.60</p>&nbsp;%
+									<p id="eduscore3" style="display:inline;"><?php echo $education['ssc_marks'] ?></p>&nbsp;%
 				          <hr>
-				        </div>         
+				        </div>
 				      </div>
 
 	 <div class="container card-2 white margin-bottom">
 				<h2 class="text-black padding-16"><i class="fa fa-cubes fa-fw margin-right xxlarge text-green"></i>Awards and Achievements</h2>
 				        <div class="container">
-				            <h5 class="opacity" id="awardname1"><b> One</b></h5><h6 class="opacity" id="awarddesc1"> (One liner) </h6>
+				            <h5 class="opacity" id="awardname1"><b><?php echo $award['title1'] ?></b></h5><h6 class="opacity" id="awarddesc1"><?php echo $award['description1'] ?> </h6>
 				            <hr>
-				            <h5 class="opacity" id="awardname2"><b> Two</b></h5><h6 class="opacity" id="awarddesc2"> (One liner) </h6>
+				            <h5 class="opacity" id="awardname2"><b> <?php echo $award['title2'] ?></b></h5><h6 class="opacity" id="awarddesc2"> <?php echo $award['description2'] ?></h6>
 				            <hr>
-				            <h5 class="opacity" id="awardname3"><b> Three</b></h5><h6 class="opacity" id="awarddesc3"> (One liner) </h6>
+				            <h5 class="opacity" id="awardname3"><b> <?php echo $award['title3'] ?></b></h5><h6 class="opacity" id="awarddesc3"><?php echo $award['description3'] ?> </h6>
 				            <hr>
-				            
+
 				        </div>
-				        
+
 				      </div>
-							
+
 							<div class="container card-2 white margin-bottom">
 				        <h2 class="text-black padding-16"><i class="fa fa-suitcase fa-fw margin-right xxlarge text-green"></i>Personal Work</h2>
 				        <div class="container">
-				          <h5 class="opacity" style="display:inline;"><i class="fa fa-github fa-2x fa-fw margin-right text-green"></i><b> Github</b> </h5><h5 class="opacity" id="link1">https://github.com/ </h5>
+				          <h5 class="opacity" style="display:inline;"><i class="fa fa-github fa-2x fa-fw margin-right text-green"></i><b> Github</b> </h5><h5 class="opacity" id="link1"><?php echo $social['github'] ?></h5>
 				          <p></p>
 				          <hr>
 				        </div>
 				        <div class="container">
-				          <h5 class="opacity" style="display:inline;"><i class="fa fa-codepen fa-2x fa-fw margin-right text-green"></i><b>Linkedin</b> </h5><h5 class="opacity" id="link2">https://linkedin.com/in/</h5>
+				          <h5 class="opacity" style="display:inline;"><i class="fa fa-codepen fa-2x fa-fw margin-right text-green"></i><b>Linkedin</b> </h5><h5 class="opacity" id="link2"><?php echo $social['linkedin'] ?></h5>
 				          <p></p>
 				          <hr>
 				        </div>
 
-				        
+
 							</div>
-							
+
 				      <div class="container card-2 white margin-bottom margin-top text-grey">
 				        <h2 class="text-black padding-16"><i class="fa fa-download fa-fw margin-right xxlarge text-green"></i> Resume (.docx file)</h2>
 				          <div class="">
@@ -489,18 +493,18 @@ $email=getemailid($name)['email'];
 				            <button type="submit" class="btn white border border-blue round"><i class="fa fa-download"></i> Download Resume</button>
 				          </form>
 				          </div>
-				          
-				            
+
+
 				          <br>
 				        </div>
 
 
 				    <!-- End Right Column -->
 				    </div>
-				    
+
 				  <!-- End Grid -->
 				  </div>
-				  
+
 				  	<button onclick="myFunction()">Update</button>
 
 				  	<p id="demo"></p>
@@ -533,18 +537,21 @@ $email=getemailid($name)['email'];
 	$dict["dob"] = document.getElementById("DOB").innerText;
 	$dict["email"] = document.getElementById("email").innerText;
 	$dict["languages"] = document.getElementById("languages").innerText;
+
 	$dict["designation1"] = document.getElementById("designation1").innerText;
 	$dict["timespan1"] = document.getElementById("timespan1").innerText;
 	$dict["organisation1"] = document.getElementById("organisation1").innerText;
 	$dict["designation2"] = document.getElementById("designation2").innerText;
 	$dict["timespan2"] = document.getElementById("timespan2").innerText;
 	$dict["organisation2"] = document.getElementById("organisation2").innerText;
+
 	$dict["projname1"] = document.getElementById("projname1").innerText;
 	$dict["projname2"] = document.getElementById("projname2").innerText;
 	$dict["projname3"] = document.getElementById("projname3").innerText;
 	$dict["projdesc1"] = document.getElementById("projdesc1").innerText;
 	$dict["projdesc2"] = document.getElementById("projdesc2").innerText;
 	$dict["projdesc3"] = document.getElementById("projdesc3").innerText;
+
 	$dict["eduname1"] = document.getElementById("eduname1").innerText;
 	$dict["eduname2"] = document.getElementById("eduname2").innerText;
 	$dict["eduname3"] = document.getElementById("eduname3").innerText;
@@ -554,6 +561,7 @@ $email=getemailid($name)['email'];
 	$dict["eduscore1"] = document.getElementById("eduscore1").innerText;
 	$dict["eduscore2"] = document.getElementById("eduscore2").innerText;
 	$dict["eduscore3"] = document.getElementById("eduscore3").innerText;
+
 	$dict["awardname1"] = document.getElementById("awardname1").innerText;
 	$dict["awardname2"] = document.getElementById("awardname2").innerText;
 	$dict["awardname3"] = document.getElementById("awardname3").innerText;
@@ -562,11 +570,11 @@ $email=getemailid($name)['email'];
 	$dict["awarddesc3"] = document.getElementById("awarddesc3").innerText;
 	$dict["link1"] = document.getElementById("link1").innerText;
 	$dict["link2"] = document.getElementById("link2").innerText;
-	
+
 	$jsondata = JSON.stringify($dict);
 	console.log($jsondata);
 
-	console.log("hii");
+
 
 	$.ajax({
 				url: "profileprocess.php",
@@ -576,20 +584,20 @@ $email=getemailid($name)['email'];
 				success:function(response){
 					if(response.updated==true)
 					{
-						toastr["success"]("Profile updated successfully", $dict['name']);
+						alert("Profile updated succesfully");
 						setTimeout("location.href = 'profile_view.php'", 1500);
 					}else{
 						toastr["error"]("Profile could not be updated. Try again", "We're sorry");
 						setTimeout("location.href = 'profile_view.php'", 1500);
 					}
-					
+
 				},
 				error: function () {
 						toastr["error"]("Profile could not be updated. Try again", "We're sorry");
 						setTimeout("location.href = 'profile_view.php'", 1500);
-				}  
-						
-				
+				}
+
+
 		});
  });
 
