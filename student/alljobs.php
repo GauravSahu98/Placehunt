@@ -138,4 +138,4 @@ $alljobshtml = getalljobshtml($alljobs);
 		</script>
 
 	</body>
-</html>s
+</html>
