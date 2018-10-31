@@ -1,7 +1,5 @@
-
 <?php 
 
-require_once('sidenav.php');
 require_once('../includes/studentfunctions.php');
 
 session_start();
@@ -21,10 +19,30 @@ if(!isset($_SESSION['name'])){
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/main.css">
-
+		<link rel="stylesheet" href="../vendors/bootstrap-toastr/toastr.min.css">
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-		
 		<script src="js/main.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../vendors/bootstrap-toastr/toastr.min.js"></script>
+		<script>
+    toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "1500",
+            "showEasing": "swing",
+            "extendedTimeOut": "1000",
+            "hideEasing": "linear",
+            "hideMethod": "fadeOut"
+            "showMethod": "fadeIn",
+          }
+  </script>
 	</head>
 	<body>
 

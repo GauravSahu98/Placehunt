@@ -13,8 +13,6 @@ $numcompany = getnumcompanies();
 
 
 ?>
-		
-
 		<div class="main-content">
 			<div class="main">
 				<div class="widget" onclick="location.href='applied.php'" id="appl">
