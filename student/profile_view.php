@@ -377,7 +377,7 @@ $social=getsocial($sid);
 				        <div class="container">
 				          <p id="title"><i class="fa fa-briefcase fa-fw margin-right large text-green"></i><?php echo $result['about'] ?></p>
 				          <p id="location"><i class="fa fa-home fa-fw margin-right large text-green"></i>
-				          	<?php echo $result['location'] ?></p>
+				          	<?php if (empty($result['location'])) {  echo 'Enter location'; }else {echo ($result['location']);}?></p>
 				          <p id="email"><i class="fa fa-envelope fa-fw margin-right large text-green"></i>
 				          	<?php echo $email ?></p>
 				          <p id="contact"><i class="fa fa-phone fa-fw margin-right large text-green"></i>
@@ -404,13 +404,13 @@ $social=getsocial($sid);
 				        <p><h2 class="text-black padding-16"><i class="fa fa-suitcase fa-fw margin-right xxlarge text-green"></i>Professional Work</h2></p>
 				        <div class="container">
 									<h5 class="opacity" id="designation1"><b> <?php echo $workexp['designation1'] ?></b></h5>
-									<h5><h6 class="opacity" id="organisation1"><b><?php echo $workexp['organization1'] ?></b></h6></h5>
+									<h5><h6 class="opacity" id="1"><b><?php echo $workexp['organization1'] ?></b></h6></h5>
 				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan1'] ?> <span class="tag green round">Current</span></h6>
 				          <p></p>
 				          <hr>
 
 									<h5  class="opacity" id="designation2"><b><?php echo $workexp['designation2'] ?></b></h5>
-									<h5><h6 class="opacity" id="organisation2"><b><?php echo $workexp['organization2'] ?></b></h6></h5>
+									<h5><h6 class="opacity" id="2"><b><?php echo $workexp['organization2'] ?></b></h6></h5>
 				          <h6 class="text-green" id="timespan2"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan2'] ?></h6>
 									<p></p>
 
@@ -489,7 +489,7 @@ $social=getsocial($sid);
 				      <div class="container card-2 white margin-bottom margin-top text-grey">
 				        <h2 class="text-black padding-16"><i class="fa fa-download fa-fw margin-right xxlarge text-green"></i> Resume (.docx file)</h2>
 				          <div class="">
-				            <form action="#" method="get"><!-- in place of # we could have a doc link -->
+				            <form action="../includes/pdfshift.php" method="get"><!-- in place of # we could have a doc link -->
 				            <button type="submit" class="btn white border border-blue round"><i class="fa fa-download"></i> Download Resume</button>
 				          </form>
 				          </div>
@@ -540,10 +540,10 @@ $social=getsocial($sid);
 
 	$dict["designation1"] = document.getElementById("designation1").innerText;
 	$dict["timespan1"] = document.getElementById("timespan1").innerText;
-	$dict["organisation1"] = document.getElementById("organisation1").innerText;
+	$dict["1"] = document.getElementById("1").innerText;
 	$dict["designation2"] = document.getElementById("designation2").innerText;
 	$dict["timespan2"] = document.getElementById("timespan2").innerText;
-	$dict["organisation2"] = document.getElementById("organisation2").innerText;
+	$dict["2"] = document.getElementById("2").innerText;
 
 	$dict["projname1"] = document.getElementById("projname1").innerText;
 	$dict["projname2"] = document.getElementById("projname2").innerText;

@@ -19,9 +19,9 @@ require_once(__DIR__.'/../includes/studentfunctions.php');
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
 
 
-		<link rel="stylesheet" href="student/css/pf_view.css">
+		<link rel="stylesheet" href="css/pf_view.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="student/css/main.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
@@ -306,7 +306,7 @@ require_once(__DIR__.'/../includes/studentfunctions.php');
 				          <p id="email"><i class="fa fa-envelope fa-fw margin-right large text-green"></i>
 				          	email</p>
 				          <p id="contact"><i class="fa fa-phone fa-fw margin-right large text-green"></i>
-				          	Contact?></p>
+				          	Contact</p>
 				          <p id="DOB"><i class="fa fa-birthday-cake fa-fw margin-right large text-green"></i>
 				          	<?php echo $result['dob'] ?></p>
 				          <hr>

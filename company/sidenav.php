@@ -11,7 +11,7 @@
 
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
-		
+
 		<script src="js/main.js"></script>
 	</head>
 	<body>
@@ -65,6 +65,14 @@
 							<span>Shortlists</span>
 						</a>
 					</li>
+
+					<li>
+						<a href="profile_view.php">
+							<span><i class="fa fa-envelope"></i></span>
+							<span>View Profile</span>
+						</a>
+					</li>
+
 					<li>
 						<a href="logout.php">
 							<span><i class="fa fa-sign-out"></i></span>
