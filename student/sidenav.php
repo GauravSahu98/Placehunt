@@ -20,12 +20,13 @@ if(!isset($_SESSION['name'])){
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="../vendors/bootstrap-toastr/toastr.min.css">
-		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+    	<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+    	<script src="../js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../vendors/bootstrap-toastr/toastr.min.js"></script>
+    	<script src="../vendors/bootstrap-toastr/toastr.min.js"></script>
 		<script>
-    toastr.options = {
+    	toastr.options = {
             "closeButton": true,
             "debug": false,
             "newestOnTop": true,

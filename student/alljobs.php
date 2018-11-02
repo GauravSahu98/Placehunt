@@ -119,17 +119,17 @@ $alljobshtml = getalljobshtml($alljobs);
                success:function(response){
                  if(response.applied==true)
                  {
-                    toastr["success"]("Logged in successfully", $uname);
-                    setTimeout("location.href = 'company/index.php'", 1500);
+                    toastr["success"]("Applied successfully", $uname);
+                    setTimeout("location.href = 'applied.php'", 1500);
                  }else{
-                    toastr["error"]("Invalid credentials", "We're sorry");
-                    setTimeout("location.href = 'index.php#companysignup'", 1500);
+                    toastr["error"]("Could not apply. Please retry");
+                    setTimeout("location.href = 'apply.php'", 1500);
                  }
                  
                },
                error: function () {
-                   toastr["error"]("Invalid credentials", "We're sorry");
-                   setTimeout("location.href = 'index.php#companysignup'", 1500);
+                   toastr["error"]("Could not apply. Please retry");
+                   setTimeout("location.href = 'apply.php'", 1500);
                }  
                    
                

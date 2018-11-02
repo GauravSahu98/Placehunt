@@ -101,14 +101,14 @@ $(document).ready(function($) {
 
 	"use strict";
 
-	// $(window).stellar({
-  //   responsive: false,
-  //   parallaxBackgrounds: true,
-  //   parallaxElements: true,
-  //   horizontalScrolling: false,
-  //   hideDistantElements: false,
-  //   scrollProperty: 'scroll'
-  // });
+	$(window).stellar({
+    responsive: false,
+    parallaxBackgrounds: true,
+    parallaxElements: true,
+    horizontalScrolling: false,
+    hideDistantElements: false,
+    scrollProperty: 'scroll'
+  });
 
 
 	// loader
@@ -387,17 +387,14 @@ $(document).ready(function($) {
 	});
 
 
-
 });
 
-$(function() {
-	$(".btn").click(function() {
-		$(".form-signin").toggleClass("form-signin-left");
-    $(".form-signup").toggleClass("form-signup-left");
-    $(".frame").toggleClass("frame-long");
-    $(".signup-inactive").toggleClass("signup-active");
-    $(".signin-active").toggleClass("signin-inactive");
-    $(".forgot").toggleClass("forgot-left");   
-    $(this).removeClass("idle").addClass("active");
-	});
+$(".btn").click(function() {
+	$(".form-signin").toggleClass("form-signin-left");
+	$(".form-signup").toggleClass("form-signup-left");
+	$(".frame").toggleClass("frame-long");
+	$(".signup-inactive").toggleClass("signup-active");
+	$(".signin-active").toggleClass("signin-inactive");
+	$(".forgot").toggleClass("forgot-left");   
+	$(this).removeClass("idle").addClass("active");
 });

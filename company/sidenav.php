@@ -13,6 +13,15 @@
         <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 		
 		<script src="js/main.js"></script>
+		<style>
+			.widget:hover {
+				/* color: red; */
+				border-radius: 2px;
+				border: none;
+				border-bottom: 1px solid grey;
+				box-shadow: 0px 0px 25px black;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="header">

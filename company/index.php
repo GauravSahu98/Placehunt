@@ -12,6 +12,14 @@ $numjobs = getnumpostedjobs($_SESSION['name']);
 
 
 ?>
+		<style>
+			.text{
+				color: blue;
+			}
+			.text:hover{
+				color:black;
+			}
+		</style>
 		<div class="main-content">
 			<div class="title">
 				Dashboard

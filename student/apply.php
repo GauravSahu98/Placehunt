@@ -5,7 +5,11 @@
 }
  
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $sid = $_POST['sid'];
+    $jid = $_POST['jid'];
+    $query="INSERT INTO applies VALUES('$sid','$jid')";
 
-    $query="INSERT INTO student(name, password, email) VALUES('$username','$password','$emailid')";
+    
 }
+
 ?>
