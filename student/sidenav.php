@@ -40,8 +40,8 @@ if(!isset($_SESSION['name'])){
             "showEasing": "swing",
             "extendedTimeOut": "1000",
             "hideEasing": "linear",
-            "hideMethod": "fadeOut"
-            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "showMethod": "fadeIn"
           }
   </script>
 	</head>

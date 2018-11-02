@@ -78,13 +78,15 @@ $applicationshtml = getapplicationshtml($jobs);
 
 		<script type="text/javascript">
 			function view($sid) {
-			$.ajax({
-               url: "view_studentprofile.php",
-               method:"POST",
-               data:{sid: $sid},
-               dataType:"json"
-           });
+				$.ajax({
+				url: "view_studentprofile.php",
+				method:"POST",
+				data:{sid: $sid},
+				dataType:"json"
+			});
 			}
+
+			
 		</script>
 	</body>
 </html>
