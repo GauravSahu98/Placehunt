@@ -3,7 +3,9 @@
 require_once('sidenav.php');
 require_once('../includes/studentfunctions.php');
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
 }	

@@ -1,6 +1,7 @@
 <?php 
 
 require_once('sidenav.php');
+require_once('../includes/studentfunctions.php');
 require_once('../includes/companyfunctions.php');
 
 session_start();
@@ -9,6 +10,7 @@ if(!isset($_SESSION['name'])){
 }	
 
 function getapplicationshtml($jobs){
+	global $connection;
     $jobshtml = "";
 
     foreach($jobs as $job){
@@ -18,18 +20,8 @@ function getapplicationshtml($jobs){
 		$jobshtml = $jobshtml."<td>".$job['email']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['title']."</td>";
         $jobshtml = $jobshtml."<td>".$job['skills']."</td>";
-        $jobshtml = $jobshtml."<td>
-        <form action='viewprofile.php' method='POST'>
-        <input type='hidden' name='name' value='".$job['name']."'>
-        <input type='submit' name='submit' value='View Profile'>
-        </form>
-        </td>";
-        $jobshtml = $jobshtml."<td>
-        <form action='viewprofile.php' method='POST'>
-        <input type='hidden' name='name' value='".$job['name']."'>
-        <input type='submit' name='submit' value='Shortlist'>
-        </form>
-        </td>";
+        $jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='view(".getsid($job['name'])['SID'].")' value='View profile'></td>";
+        $jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='shortlist(".$job['name'].",".$job['jid'].")' value='Shortlist'></td>";
         $jobshtml = $jobshtml."</tr>";
     }
 
@@ -83,5 +75,18 @@ $applicationshtml = getapplicationshtml($jobs);
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			function view($sid) {
+				$.ajax({
+				url: "view_studentprofile.php",
+				method:"POST",
+				data:{sid: $sid},
+				dataType:"json"
+			});
+			}
+
+			
+		</script>
 	</body>
 </html>

@@ -405,7 +405,7 @@ $social=getsocial($sid);
 				        <div class="container">
 									<h5 class="opacity" id="designation1"><b> <?php echo $workexp['designation1'] ?></b></h5>
 									<h5><h6 class="opacity" id="organisation1"><b><?php echo $workexp['organization1'] ?></b></h6></h5>
-				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan1'] ?> <span class="tag green round">Current</span></h6>
+				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan1'] ?></h6>
 				          <p></p>
 				          <hr>
 

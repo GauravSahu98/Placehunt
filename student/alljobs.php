@@ -1,9 +1,11 @@
 <?php 
-
 require_once('sidenav.php');
 require_once('../includes/studentfunctions.php');
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+ 
 if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
 }	
@@ -83,7 +85,7 @@ $alljobshtml = getalljobshtml($alljobs);
 
 		<div class="main-content">
 			<div class="title">
-				<?php echo $_SESSION['name']."'s" ?> Applied jobs
+				All jobs
 			</div>
 			<div class="main">
 				<div class="widget">
@@ -119,17 +121,17 @@ $alljobshtml = getalljobshtml($alljobs);
                success:function(response){
                  if(response.applied==true)
                  {
-                    toastr["success"]("Logged in successfully", $uname);
-                    setTimeout("location.href = 'company/index.php'", 1500);
+                    toastr["success"]("Applied successfully");
+                    setTimeout("location.href = 'applied.php'", 1500);
                  }else{
-                    toastr["error"]("Invalid credentials", "We're sorry");
-                    setTimeout("location.href = 'index.php#companysignup'", 1500);
+                    toastr["error"]("Could not apply. Please retry");
+                    setTimeout("location.href = 'alljobs.php'", 1500);
                  }
                  
                },
                error: function () {
-                   toastr["error"]("Invalid credentials", "We're sorry");
-                   setTimeout("location.href = 'index.php#companysignup'", 1500);
+                   toastr["error"]("Could not apply. Please retry");
+                   setTimeout("location.href = 'alljobs.php'", 1500);
                }  
                    
                
