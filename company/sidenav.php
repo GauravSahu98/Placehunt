@@ -16,10 +16,7 @@
 		<style>
 			.widget:hover {
 				/* color: red; */
-				border-radius: 2px;
-				border: none;
-				border-bottom: 1px solid grey;
-				box-shadow: 0px 0px 25px black;
+				box-shadow: 0px 0px 50px grey;
 			}
 		</style>
 	</head>

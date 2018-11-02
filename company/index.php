@@ -12,43 +12,35 @@ $numjobs = getnumpostedjobs($_SESSION['name']);
 
 
 ?>
-		<style>
-			.text{
-				color: blue;
-			}
-			.text:hover{
-				color:black;
-			}
-		</style>
 		<div class="main-content">
-			<div class="title">
+			<!-- <div class="title">
 				Dashboard
-			</div>
+			</div> -->
 			<div class="main">
 				<div class="widget" onclick="location.href='posted.php'" style="background-image: url(https://www.dentistfriend.com//uploads/praxisimages/dental-jobs-opp.png);background-size: cover;">
 
 					<div class="title">Posted Jobs</div>
 					<div class="overlay-wid">
-					    <div class="text"><?php print_r($numjobs." posted"); ?> jobs</div>
+					    <div class="bottom"><?php print_r($numjobs." posted"); ?> jobs</div>
 					</div>
 				</div>
 				<div class="widget" onclick="location.href='upload.php'" style="background-image: url(https://www.shareicon.net/data/512x512/2017/01/06/868273_sign_512x512.png);background-size: cover;">
 					<div class="title">Upload a job</div>
-					<!-- <div class="overlay-wid">
-					    <div class="text">Here You can </div>
-					</div> -->
+					<div class="overlay-wid">
+					    <div class="bottom">upload here</div>
+					</div>
 				</div>
 				<div class="widget" onclick="openNav()">
 					<div class="title">Shortlisted Candidates</div>
-					<!-- <div class="overlay-wid">
-					    <div class="text">Here You can view your applied jobs</div>
-					</div> -->
+					<div class="overlay-wid">
+					    <div class="bottom">Here You can view your applied jobs</div>
+					</div>
 				</div>
 				<div class="widget" onclick="location.href='profile.html'">
 					<div class="title">Company Profile</div>
-					<!-- <div class="overlay-wid">
-					    <div class="text">Here You can view your applied jobs</div>
-					</div> -->
+					<div class="overlay-wid">
+					    <div class="bottom">Here You can view your applied jobs</div>
+					</div>
 				</div>
 			</div>
 		</div>
