@@ -29,4 +29,34 @@ function getapplications($name){
     }
 }
 
+function getcid($name) {
+    global $connection;
+    $query = "SELECT CID FROM company WHERE NAME='$name'";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        return($row);
+    }
+}
+
+
+function getcompanyprofile($cid){
+    global $connection;
+
+    $query="SELECT * FROM company_profile where proid='$cid'";
+
+        if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        return($row);
+    }
+}
+
+function getcompanyemailid($name) {
+    global $connection;
+    $query = "SELECT email FROM company WHERE NAME='$name'";
+    if(mysqli_query($connection, $query)) {
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        return($row);
+    }
+}
+
 ?>

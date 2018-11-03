@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once('sidenav.php');
 require_once('../includes/studentfunctions.php');
@@ -6,7 +6,7 @@ require_once('../includes/studentfunctions.php');
 session_start();
 if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
-}	
+}
 
 $numjobs = getnumappliedjobs($_SESSION['name']);
 $numcompany = getnumcompanies();
@@ -17,20 +17,23 @@ $numcompany = getnumcompanies();
 			<div class="main">
 				<div class="widget" onclick="location.href='applied.php'" id="appl">
 					<div class="title">Applied Jobs</div>
-					<h5><?php print_r($numjobs." applied"); ?></h5>
+					<div class="bottom"><?php print_r($numjobs." applied"); ?></div>
 				</div>
 				<div class="widget" onclick="location.href='companies.php'" id="cmpn">
 					<div class="title">All Companies</div>
-					<h5><?php print_r($numcompany." companies"); ?></h5>
+					<div class="bottom"><?php print_r($numcompany." companies"); ?><div>
 				</div>
 				<div class="widget" onclick="location.href='problems.php'" id="tests">
 					<div class="title">Practise Problems</div>
+					<div class="bottom">Practise perfects you</div>
 				</div>
 				<div class="widget" id="pfmance">
 					<div class="title">Track Performance</div>
+					<div class="bottom">Track your performance</div>
 				</div>
 				<div class="widget" onclick="location.href='profile_view.php' " id="profile">
 					<div class="title">View/Edit Profile</div>
+					<div class="bottom">Here you can edit</div>
 				</div>
 			</div>
 		</div>
@@ -39,7 +42,7 @@ $numcompany = getnumcompanies();
 		function openNav() {
 
 		  document.getElementById("myNav").style.width = "100%";
-		  
+
 		  var myWindow = window.open("","_self");
     	  myWindow.document.write("<p>I replaced the current window.</p>");
 		}
