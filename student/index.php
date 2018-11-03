@@ -17,23 +17,25 @@ $numcompany = getnumcompanies();
 			<div class="main">
 				<div class="widget" onclick="location.href='applied.php'" id="appl">
 					<div class="title">Applied Jobs</div>
-					<div class="bottom"><?php print_r($numjobs." applied"); ?></div>
+					<div class="overlay-wid">
+						<div class="bottom"><?php print_r($numjobs." applied"); ?></div>
+					</div>
 				</div>
 				<div class="widget" onclick="location.href='companies.php'" id="cmpn">
 					<div class="title">All Companies</div>
-					<div class="bottom"><?php print_r($numcompany." companies"); ?><div>
+					<div class="bottom"><?php print_r($numcompany." companies"); ?></div>
 				</div>
 				<div class="widget" onclick="location.href='problems.php'" id="tests">
 					<div class="title">Practise Problems</div>
-					<div class="bottom">Practise perfects you</div>
+					<div class="bottom">Practice makes you perfect</div>
 				</div>
-				<div class="widget" id="pfmance">
-					<div class="title">Track Performance</div>
-					<div class="bottom">Track your performance</div>
+				<div class="widget" id="pfmance" onclick="location.href='performance.php'">
+					<div class="title">Open Source</div>
+					<div class="bottom">Track contributions</div>
 				</div>
 				<div class="widget" onclick="location.href='profile_view.php' " id="profile">
 					<div class="title">View/Edit Profile</div>
-					<div class="bottom">Here you can edit</div>
+					<div class="bottom">Make an impact</div>
 				</div>
 			</div>
 		</div>

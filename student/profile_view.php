@@ -486,12 +486,12 @@ $social=getsocial($sid);
 
 							</div>
 
-				      <div class="container card-2 white margin-bottom margin-top text-grey">
+				      <div class="container card-2 white margin-bottom margin-top text-grey" id="resumeblock">
 				        <h2 class="text-black padding-16"><i class="fa fa-download fa-fw margin-right xxlarge text-green"></i> Resume (.docx file)</h2>
 				          <div class="">
-				            <form action="../includes/pdfshift.php" method="get"><!-- in place of # we could have a doc link -->
-				            <button type="submit" class="btn white border border-blue round"><i class="fa fa-download"></i> Download Resume</button>
-				          </form>
+									<a href="javascript:forprint()">
+										<button type="submit" class="btn white border border-blue round"><i class="fa fa-download"></i> Download Resume</button>
+	 								</a>
 				          </div>
 
 
@@ -505,7 +505,7 @@ $social=getsocial($sid);
 				  <!-- End Grid -->
 				  </div>
 
-				  	<button onclick="myFunction()">Update</button>
+				  	<button onclick="myFunction()" id="update">Update</button>
 
 				  	<p id="demo"></p>
 
@@ -526,6 +526,22 @@ $social=getsocial($sid);
 			</div>
 		</div>
 <script>
+
+	function forprint(){
+		if (!window.print){
+			return
+		}
+			document.getElementById("resumeblock").style.display = "none";
+			document.getElementById("update").style.display = "none";
+			document.getElementById("save").style.display = "none";
+			document.getElementById("demo").style.display = "none";
+			window.print()
+			document.getElementById("resumeblock").style.display = "block";
+			document.getElementById("update").style.display = "block";
+			document.getElementById("save").style.display = "block";
+			document.getElementById("demo").style.display = "block";
+	}
+
  $("#save").click(function(){
 
 	$dict = {};
@@ -584,7 +600,7 @@ $social=getsocial($sid);
 				success:function(response){
 					if(response.updated==true)
 					{
-						alert("Profile updated succesfully");
+						toastr["success"]("Profile updated succesfully");
 						setTimeout("location.href = 'profile_view.php'", 1500);
 					}else{
 						toastr["error"]("Profile could not be updated. Try again", "We're sorry");

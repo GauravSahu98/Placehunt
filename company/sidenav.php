@@ -1,3 +1,13 @@
+<?php 
+
+require_once('../includes/companyfunctions.php');
+
+session_start();
+if(!isset($_SESSION['name'])){
+	header('location: ../index.php');
+}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,10 +19,33 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/main.css">
 
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-        <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+        <link rel="stylesheet" href="../vendors/bootstrap-toastr/toastr.min.css">
+    	<script src="../js/jquery.min.js"></script>
+    	<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+   	 	<script src="../js/bootstrap.min.js"></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+		<script src="../vendors/bootstrap-toastr/toastr.min.js"></script>
 
 		<script src="js/main.js"></script>
+		<script>
+    toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "1500",
+            "showEasing": "swing",
+            "extendedTimeOut": "1000",
+            "hideEasing": "linear",
+            "hideMethod": "fadeOut",
+            "showMethod": "fadeIn"
+          }
+  </script>
 		<style>
 			.widget:hover {
 				/* color: red; */
@@ -25,6 +58,11 @@
 			<div class="logo">
 				<i class="fa fa-tachometer"></i>
 				<span>PlaceHunt</span>
+			</div>
+			<div class="user-field">
+				<a href="#">  
+				<p>Welcome <?php echo $_SESSION['name'] ?> !</p>
+				</a>
 			</div>
 			<a href="#" class="nav-trigger"><span></span></a>
 		</div>

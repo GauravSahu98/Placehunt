@@ -5,8 +5,9 @@ require_once(__DIR__.'/../includes/studentfunctions.php');
    if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-$name=$_SESSION['name'];
+
 $sid=$_POST['sid'];
+$name=getname($sid)['NAME'];
 $result=getstudentprofile($sid);
 $email=getemailid($name)['email'];
 $workexp=getworkexperience($sid);
@@ -14,8 +15,6 @@ $project=getproject($sid);
 $education=geteducation($sid);
 $award=getaward($sid);
 $social=getsocial($sid);
-// print_r($result);
-
 
 ?>
 
@@ -240,33 +239,6 @@ $social=getsocial($sid);
 			}
 		</style>
 
-		<script type="text/javascript">
-			function myFunction() {
-			    document.getElementById("edit").contentEditable = true;
-			    document.getElementById("demo").innerHTML = "The element above is now editable. Try to change its text.";
-			}
-			function saveEdits(){
-				var editElem = document.getElementById('edit');
-				var userVersion = editElem.innerHTML;
-				localStorage.userEdits = userVersion;
-
-			}
-
-			function checkEdits(){
-				if(localStorage.userEdits != null)
-					document.getElementById('edit').innerHTML = localStorage.userEdits;
-			}
-			// function readURL(input) {
-   //          if (input.files && input.files[0]) {
-   //              var reader = new FileReader();
-   //              reader.onload = function (e) {
-   //                  $('#blah')
-   //                      .attr('src', e.target.result);
-   //              };
-   //              reader.readAsDataURL(input.files[0]);
-   //          }
-   //      }
-		</script>
 	</head>
 	<body class="light-grey">
 
@@ -505,11 +477,6 @@ $social=getsocial($sid);
 				  <!-- End Grid -->
 				  </div>
 
-				  	<button onclick="myFunction()">Update</button>
-
-				  	<p id="demo"></p>
-
-				  	<button onclick="saveEdits()" id="save">Save</button>
 					<!-- <button onclick="saveEdits()" value="Save"> -->
 				  <!-- End Page Container -->
 				</div>
@@ -525,82 +492,6 @@ $social=getsocial($sid);
 				</footer>
 			</div>
 		</div>
-<script>
- $("#save").click(function(){
 
-	$dict = {};
-
-	$dict["name"] = document.getElementById("name").innerText;
-	$dict["about"] = document.getElementById("title").innerText;
-	$dict["location"] = document.getElementById("location").innerText;
-	$dict["contact"] = document.getElementById("contact").innerText;
-	$dict["dob"] = document.getElementById("DOB").innerText;
-	$dict["email"] = document.getElementById("email").innerText;
-	$dict["languages"] = document.getElementById("languages").innerText;
-
-	$dict["designation1"] = document.getElementById("designation1").innerText;
-	$dict["timespan1"] = document.getElementById("timespan1").innerText;
-	$dict["organisation1"] = document.getElementById("organisation1").innerText;
-	$dict["designation2"] = document.getElementById("designation2").innerText;
-	$dict["timespan2"] = document.getElementById("timespan2").innerText;
-	$dict["organisation2"] = document.getElementById("organisation2").innerText;
-
-	$dict["projname1"] = document.getElementById("projname1").innerText;
-	$dict["projname2"] = document.getElementById("projname2").innerText;
-	$dict["projname3"] = document.getElementById("projname3").innerText;
-	$dict["projdesc1"] = document.getElementById("projdesc1").innerText;
-	$dict["projdesc2"] = document.getElementById("projdesc2").innerText;
-	$dict["projdesc3"] = document.getElementById("projdesc3").innerText;
-
-	$dict["eduname1"] = document.getElementById("eduname1").innerText;
-	$dict["eduname2"] = document.getElementById("eduname2").innerText;
-	$dict["eduname3"] = document.getElementById("eduname3").innerText;
-	$dict["eduduration1"] = document.getElementById("eduduration1").innerText;
-	$dict["eduduration2"] = document.getElementById("eduduration2").innerText;
-	$dict["eduduration3"] = document.getElementById("eduduration3").innerText;
-	$dict["eduscore1"] = document.getElementById("eduscore1").innerText;
-	$dict["eduscore2"] = document.getElementById("eduscore2").innerText;
-	$dict["eduscore3"] = document.getElementById("eduscore3").innerText;
-
-	$dict["awardname1"] = document.getElementById("awardname1").innerText;
-	$dict["awardname2"] = document.getElementById("awardname2").innerText;
-	$dict["awardname3"] = document.getElementById("awardname3").innerText;
-	$dict["awarddesc1"] = document.getElementById("awarddesc1").innerText;
-	$dict["awarddesc2"] = document.getElementById("awarddesc2").innerText;
-	$dict["awarddesc3"] = document.getElementById("awarddesc3").innerText;
-	$dict["link1"] = document.getElementById("link1").innerText;
-	$dict["link2"] = document.getElementById("link2").innerText;
-
-	$jsondata = JSON.stringify($dict);
-	console.log($jsondata);
-
-
-
-	$.ajax({
-				url: "profileprocess.php",
-				method:"POST",
-				data: {data: $dict},
-				dataType:"json",
-				success:function(response){
-					if(response.updated==true)
-					{
-						alert("Profile updated succesfully");
-						setTimeout("location.href = 'profile_view.php'", 1500);
-					}else{
-						toastr["error"]("Profile could not be updated. Try again", "We're sorry");
-						setTimeout("location.href = 'profile_view.php'", 1500);
-					}
-
-				},
-				error: function () {
-						toastr["error"]("Profile could not be updated. Try again", "We're sorry");
-						setTimeout("location.href = 'profile_view.php'", 1500);
-				}
-
-
-		});
- });
-
-</script>
 	</body>
 </html>
