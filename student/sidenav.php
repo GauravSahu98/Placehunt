@@ -44,6 +44,11 @@ if(!isset($_SESSION['name'])){
             "showMethod": "fadeIn"
           }
   </script>
+  <style>
+	  .widget:hover{
+		  box-shadow: 0px 0px 50px grey;
+	  }
+  </style>
 	</head>
 	<body>
 
@@ -53,11 +58,8 @@ if(!isset($_SESSION['name'])){
 					<span>PlaceHunt</span>
 				</div>
 				<div class="user-field">
-				  <a href="#" class="notifications"><i class="fa fa-bell-o" aria-hidden="true"><span class="circle">5+</span></i></a>
-				  <a href="#">
-				    
-				   <p>HIII <?php echo $_SESSION['name'] ?></p>
-				    <i class="fa fa-caret-down" aria-hidden="true"></i>
+				  <a href="#">  
+				   <p>Welcome <?php echo $_SESSION['name'] ?> !</p>
 				  </a>
 				</div>
 				<a href="#" class="nav-trigger"><span></span></a>
@@ -101,15 +103,15 @@ if(!isset($_SESSION['name'])){
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="performance.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>
-								<span>Performance</span>
+								<span>Contributions</span>
 							</a>
 						</li>
 						<li>
 							<a href="companies.php">
 								<span><i class="fa fa-credit-card-alt"></i></span>
-								<span>All Companies</span>
+								<span>Companies</span>
 							</a>
 						</li>
 						<li>

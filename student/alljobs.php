@@ -15,7 +15,7 @@ function eligible($expected){
 	$name=$_SESSION['name'];
 	$query = "SELECT grad_cgpa FROM education WHERE education_id = (SELECT proid FROM student_profile WHERE proid=(SELECT SID FROM STUDENT WHERE NAME= '$name'))";
 	if(mysqli_query($connection, $query)) {
-        $cgpa = mysqli_fetch_all(mysqli_query($connection, $query), MYSQLI_ASSOC)[0]['grad_cgpa'];
+        $cgpa = mysqli_fetch_assoc(mysqli_query($connection, $query))['grad_cgpa'];
     }
 
     if($cgpa>=$expected){

@@ -11,17 +11,19 @@ if(!isset($_SESSION['name'])){
 
 function getapplicationshtml($jobs){
 	global $connection;
+	$cid = getcid($_SESSION['name'])['CID'];
     $jobshtml = "";
 
     foreach($jobs as $job){
+		$sid = getsid($job['name'])['SID'];
         $jobshtml = $jobshtml."<tr>";
         $jobshtml = $jobshtml."<td>".$job['jid']."</td>";
         $jobshtml = $jobshtml."<td>".$job['name']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['email']."</td>";
 		$jobshtml = $jobshtml."<td>".$job['title']."</td>";
         $jobshtml = $jobshtml."<td>".$job['skills']."</td>";
-        $jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='view(".getsid($job['name'])['SID'].")' value='View profile'></td>";
-        $jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='shortlist(".$job['name'].",".$job['jid'].")' value='Shortlist'></td>";
+        $jobshtml = $jobshtml."<td> <form action='view_studentprofile.php' method='POST'> <input type='submit' id='".$job['jid']."' value='View profile'> <input type='hidden' name='sid' value='".getsid($job['name'])['SID']."'></td> </form>";
+        $jobshtml = $jobshtml."<td> <input type='button' id='".$job['jid']."' onclick='shortlist(".$sid.",".$job['jid'].",".$cid.")' value='Shortlist'></td>";
         $jobshtml = $jobshtml."</tr>";
     }
 
@@ -77,16 +79,31 @@ $applicationshtml = getapplicationshtml($jobs);
 		</div>
 
 		<script type="text/javascript">
-			function view($sid) {
+			function shortlist($sid, $jid, $cid) {
 				$.ajax({
-				url: "view_studentprofile.php",
+				url: "shortlist.php",
 				method:"POST",
-				data:{sid: $sid},
-				dataType:"json"
+				data:{sid: $sid, jid: $jid, cid: $cid},
+				dataType:"json",
+				success:function(response){
+					if(response.done==true)
+					{
+						toastr["success"]("Shortlisted candidate and sent mail successfully.");
+						setTimeout("location.href = 'slisted.php'", 1500);
+					}else{
+						toastr["error"]("Shortlisting failed. Please retry");
+						setTimeout("location.href = 'applications.php'", 1500);
+					}
+				},
+				error: function () {
+						toastr["error"]("Shortlisting failed. Please retry");
+						setTimeout("location.href = 'applications.php'", 1500);
+				}
+
+
 			});
 			}
 
-			
 		</script>
 	</body>
 </html>
