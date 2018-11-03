@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once('sidenav.php');
 require_once('../includes/companyfunctions.php');
@@ -6,7 +6,7 @@ require_once('../includes/companyfunctions.php');
 session_start();
 if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
-}	
+}
 
 
 ?>
@@ -14,7 +14,7 @@ if(!isset($_SESSION['name'])){
 		/*form styles*/
 		#msform {
 			width: 400px;
-			margin: 50px auto;
+			margin: 1px auto;
 			text-align: center;
 			position: relative;
 		}
@@ -27,7 +27,7 @@ if(!isset($_SESSION['name'])){
 			box-sizing: border-box;
 			width: 80%;
 			margin: 0 10%;
-			
+
 			/*stacking fieldsets above each other*/
 			position: relative;
 		}
@@ -134,7 +134,7 @@ if(!isset($_SESSION['name'])){
 		}
 		#progressbar li:first-child:after {
 			/*connector not needed before the first step*/
-			content: none; 
+			content: none;
 		}
 		/*marking active/completed steps green*/
 		/*The number of the step and the connector before it = green*/
@@ -152,7 +152,7 @@ if(!isset($_SESSION['name'])){
 		  background: transparent;
 		  font-size: 100%;
 		}
-		
+
 
 		html {
 		  overflow-y: scroll;
@@ -205,9 +205,9 @@ if(!isset($_SESSION['name'])){
 		</style>
 
 	<div class="main-content">
-			<div class="title">
+			<!-- <div class="title">
 				Upload Jobs
-			</div>
+			</div> -->
 			<div class="main">
 				<!-- multistep form -->
 				<form id="msform" action="processjob.php" method="post">
@@ -385,7 +385,7 @@ if(!isset($_SESSION['name'])){
 		</div>
 
 		<script type="text/javascript">
-			
+
 			//jQuery time
 			var current_fs, next_fs, previous_fs; //fieldsets
 			var left, opacity, scale; //fieldset properties which we will animate
@@ -394,15 +394,15 @@ if(!isset($_SESSION['name'])){
 			$(".next").click(function(){
 				if(animating) return false;
 				animating = true;
-				
+
 				current_fs = $(this).parent();
 				next_fs = $(this).parent().next();
-				
+
 				//activate next step on progressbar using the index of next_fs
 				$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-				
+
 				//show the next fieldset
-				next_fs.show(); 
+				next_fs.show();
 				//hide the current fieldset with style
 				current_fs.animate({opacity: 0}, {
 					step: function(now, mx) {
@@ -418,12 +418,12 @@ if(!isset($_SESSION['name'])){
 			        'position': 'absolute'
 			      });
 						next_fs.css({'left': left, 'opacity': opacity});
-					}, 
-					duration: 800, 
+					},
+					duration: 800,
 					complete: function(){
 						current_fs.hide();
 						animating = false;
-					}, 
+					},
 					//this comes from the custom easing plugin
 					easing: 'easeInOutBack'
 				});
@@ -432,15 +432,15 @@ if(!isset($_SESSION['name'])){
 			$(".previous").click(function(){
 				if(animating) return false;
 				animating = true;
-				
+
 				current_fs = $(this).parent();
 				previous_fs = $(this).parent().prev();
-				
+
 				//de-activate current step on progressbar
 				$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-				
+
 				//show the previous fieldset
-				previous_fs.show(); 
+				previous_fs.show();
 				//hide the current fieldset with style
 				current_fs.animate({opacity: 0}, {
 					step: function(now, mx) {
@@ -453,12 +453,12 @@ if(!isset($_SESSION['name'])){
 						opacity = 1 - now;
 						current_fs.css({'left': left});
 						previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
-					}, 
-					duration: 800, 
+					},
+					duration: 800,
 					complete: function(){
 						current_fs.hide();
 						animating = false;
-					}, 
+					},
 					//this comes from the custom easing plugin
 					easing: 'easeInOutBack'
 				});
