@@ -44,7 +44,7 @@ $numshortlists = getnumshortlisted($_SESSION['name']);
 					    <div class="bottom"><?php print_r($numshortlists); ?> shortlists</div>
 					</div>
 				</div>
-				<div class="widget" onclick="location.href='profile.html'">
+				<div class="widget" onclick="location.href='profile_view.php'">
 					<div class="title">Company Profile</div>
 					<div class="overlay-wid">
 					    <div class="bottom">Here You can view your applied jobs</div>

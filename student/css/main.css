@@ -53,7 +53,7 @@ body {
 	width: 20px;
 	height: 44px;
 	right: 30px;
-	display: block;	
+	display: block;
 }
 .nav-trigger span, .nav-trigger span:before, span:after {
 	width: 20px;
@@ -159,7 +159,7 @@ body {
 		height: 15%;
 		background: linear-gradient(
         rgba(53, 1, 132,0.4),
-        rgba(53, 1, 132,1)), 
+        rgba(53, 1, 132,1)),
         url(http://yours4everorganic.com/yours4ever/wp-content/uploads/2017/01/Opportunity_banner01_B.png) no-repeat 50% 50%;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -283,7 +283,7 @@ body {
     margin-left: 2%;
 }
 
-	
+
 .header>.user-field{
   display: inline-block;
   float: right;
@@ -295,7 +295,7 @@ body {
   padding-right: 20px;
   text-decoration:none;
   vertical-align: top;
-  height: 30px; 
+  height: 30px;
 }
 .notifications
 {
@@ -317,7 +317,7 @@ body {
   left: 20px;
 }
 .user-img{
-  background: url(https://s3.amazonaws.com/uifaces/faces/twitter/k/128.jpg) no-repeat center center; 
+  background: url(https://s3.amazonaws.com/uifaces/faces/twitter/k/128.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -339,7 +339,7 @@ body {
 	  display:none;
 	}
 	.user-field>a{
-	  display:none; 
+	  display:none;
 	}
 	.notifications
 	{

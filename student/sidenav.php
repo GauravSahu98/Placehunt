@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once('../includes/studentfunctions.php');
 
@@ -19,7 +19,7 @@ if(!isset($_SESSION['name'])){
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="../vendors/bootstrap-toastr/toastr.min.css">
+		<!-- <link rel="stylesheet" href="../vendors/bootstrap-toastr/toastr.min.css"> -->
 		<script src="../js/jquery.min.js"></script>
     	<script src="../js/jquery-migrate-3.0.1.min.js"></script>
     	<script src="../js/bootstrap.min.js"></script>
@@ -122,5 +122,5 @@ if(!isset($_SESSION['name'])){
 						</li>
 					</ul>
 				</nav>
-				
+
 			</div>

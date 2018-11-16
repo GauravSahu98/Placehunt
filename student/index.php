@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once('sidenav.php');
 require_once('../includes/studentfunctions.php');
@@ -6,7 +6,7 @@ require_once('../includes/studentfunctions.php');
 session_start();
 if(!isset($_SESSION['name'])){
 	header('location: ../index.php');
-}	
+}
 
 $numjobs = getnumappliedjobs($_SESSION['name']);
 $numcompany = getnumcompanies();
@@ -44,7 +44,7 @@ $numcompany = getnumcompanies();
 		function openNav() {
 
 		  document.getElementById("myNav").style.width = "100%";
-		  
+
 		  var myWindow = window.open("","_self");
     	  myWindow.document.write("<p>I replaced the current window.</p>");
 		}
