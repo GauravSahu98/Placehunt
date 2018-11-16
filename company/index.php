@@ -35,13 +35,13 @@ $numshortlists = getnumshortlisted($_SESSION['name']);
 				<div class="widget" onclick="location.href='applications.php'">
 					<div class="title">Applications</div>
 					<div class="overlay-wid">
-					    <div class="text"><?php print_r($numapplications); ?> applications</div>
+					    <div class="bottom"><?php print_r($numapplications); ?> applications</div>
 					</div>
 				</div>
 				<div class="widget" onclick="location.href='slisted.php'">
 					<div class="title">Shortlisted Candidates</div>
 					<div class="overlay-wid">
-					    <div class="text"><?php print_r($numshortlists); ?> shortlists</div>
+					    <div class="bottom"><?php print_r($numshortlists); ?> shortlists</div>
 					</div>
 				</div>
 				<div class="widget" onclick="location.href='profile.html'">

@@ -260,7 +260,7 @@ require_once(__DIR__.'/../includes/studentfunctions.php');
 	</head>
 	<body class="light-grey">
 
-			<div class="header">
+			<!-- <div class="header">
 				<div class="logo">
 					<i class="fa fa-tachometer"></i>
 					<span>PlaceHunt</span>
@@ -273,7 +273,7 @@ require_once(__DIR__.'/../includes/studentfunctions.php');
 				  </a>
 				</div>
 				<a href="#" class="nav-trigger"><span></span></a>
-			</div>
+			</div> -->
 			<?php require_once('sidenav.php');?>
 
 			<div class="main-content">

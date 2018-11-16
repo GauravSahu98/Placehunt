@@ -375,20 +375,20 @@ $social=getsocial($sid);
 				          </div>
 				        </div>
 				        <div class="container">
-				          <p id="title"><i class="fa fa-briefcase fa-fw margin-right large text-green"></i><?php echo $result['about'] ?></p>
+				          <p id="title"><i class="fa fa-briefcase fa-fw margin-right large text-green"></i><?php if (empty($result['about'])) {  echo 'Write about Yourself'; }else {echo ($result['about']);}?></p>
 				          <p id="location"><i class="fa fa-home fa-fw margin-right large text-green"></i>
 				          	<?php if (empty($result['location'])) {  echo 'Enter location'; }else {echo ($result['location']);}?></p>
 				          <p id="email"><i class="fa fa-envelope fa-fw margin-right large text-green"></i>
 				          	<?php echo $email ?></p>
 				          <p id="contact"><i class="fa fa-phone fa-fw margin-right large text-green"></i>
-				          	<?php echo $result['contact'] ?></p>
+									<?php if (empty($result['contact'])) {  echo 'Enter Contact Info'; }else {echo ($result['contact']);}?></p>
 				          <p id="DOB"><i class="fa fa-birthday-cake fa-fw margin-right large text-green"></i>
-				          	<?php echo $result['dob'] ?></p>
+									<?php if (empty($result['dob'])) {  echo 'Enter Date of birth'; }else {echo ($result['dob']);}?></p>
 				          <hr>
 
 
 				          <p class="large text-theme text-black"><b><i class="fa fa-language fa-fw margin-right text-green"></i>Languages</b></p>
-				          <p id="languages"><?php echo $result['languages'] ?></p>
+				          <p id="languages"><?php if (empty($result['languages'])) {  echo 'Programming Languages'; }else {echo ($result['languages']);}?></p>
 
 				        </div>
 				      </div><br>
@@ -403,15 +403,15 @@ $social=getsocial($sid);
 				      <div class="container card-2 white margin-bottom">
 				        <p><h2 class="text-black padding-16"><i class="fa fa-suitcase fa-fw margin-right xxlarge text-green"></i>Professional Work</h2></p>
 				        <div class="container">
-									<h5 class="opacity" id="designation1"><b> <?php echo $workexp['designation1'] ?></b></h5>
-									<h5><h6 class="opacity" id="organisation1"><b><?php echo $workexp['organization1'] ?></b></h6></h5>
-				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan1'] ?></h6>
+									<h5 class="opacity" id="designation1"><b> <?php if (empty($workexp['designation1'])) {  echo 'Enter Designation'; }else {echo ($workexp['designation1']);}?></b></h5>
+									<h5><h6 class="opacity" id="organisation1"><b><?php if (empty($workexp['organization1'])) {  echo 'Enter Organization'; }else {echo ($workexp['organization1']);}?></b></h6></h5>
+				          <h6 class="text-green" id="timespan1"><i class="fa fa-calendar fa-fw margin-right"></i><?php if (empty($workexp['timespan1'])) {  echo 'Enter Duration'; }else {echo ($workexp['timespan1']);}?></h6>
 				          <p></p>
 				          <hr>
 
-									<h5  class="opacity" id="designation2"><b><?php echo $workexp['designation2'] ?></b></h5>
-									<h5><h6 class="opacity" id="organisation2"><b><?php echo $workexp['organization2'] ?></b></h6></h5>
-				          <h6 class="text-green" id="timespan2"><i class="fa fa-calendar fa-fw margin-right"></i><?php echo $workexp['timespan2'] ?></h6>
+									<h5  class="opacity" id="designation2"><b></b><?php if (empty($workexp['designation2'])) {  echo 'Enter Designation'; }else {echo ($workexp['designation2']);}?></h5>
+									<h5><h6 class="opacity" id="organisation2"><b><?php if (empty($workexp['organization2'])) {  echo 'Enter Organization'; }else {echo ($workexp['organization2']);}?></b></h6></h5>
+				          <h6 class="text-green" id="timespan2"><i class="fa fa-calendar fa-fw margin-right"></i><?php if (empty($workexp['timespan2'])) {  echo 'Enter Duration'; }else {echo ($workexp['timespan2']);}?></h6>
 									<p></p>
 
 								</div>
